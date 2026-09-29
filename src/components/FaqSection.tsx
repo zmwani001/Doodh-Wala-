@@ -15,11 +15,11 @@ const FAQS = [
   },
   {
     q: 'How is the milk tested every day?',
-    a: 'Each morning batch undergoes over 140 daily laboratory checks verifying fat content, solids-not-fat (SNF), acidity, temperature (<4°C), and testing for absent adulterants like urea, starch, detergents, or water before clearance for morning dispatch.',
+    a: 'Purity Ensured Through Advanced Testing. Each morning batch is checked for fat content, solids-not-fat (SNF), acidity, temperature (<4°C), and adulterants like urea, starch, detergents, or added water before morning dispatch.',
   },
   {
-    q: 'What time will the milk reach my house?',
-    a: 'Our milk is delivered quietly between 5:00 AM and 7:30 AM every day, 7 days a week. Deliveries are placed in your doorstep delivery bag or porch cooler box so your morning tea and routine remain undisturbed.',
+    q: 'How is morning milk delivery scheduled?',
+    a: 'Morning Fresh Delivery As Per Availed Service. Deliveries are placed in your doorstep delivery bag or porch cooler box so your morning tea and routine remain undisturbed.',
   },
   {
     q: 'Can I pause my subscription when traveling out of town?',

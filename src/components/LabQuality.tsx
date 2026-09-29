@@ -26,11 +26,8 @@ export const LabQuality: React.FC<LabQualityProps> = ({ onOpenLabReport }) => {
             {/* Dark Highlight Metric Card */}
             <div className="p-8 rounded-3xl bg-[#042217] text-white shadow-xl border border-white/10 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#ffdf99]/5 rounded-full blur-2xl"></div>
-              <div className="font-display-hero text-5xl text-[#ffdf99] font-bold leading-none mb-2">
-                140+
-              </div>
-              <div className="font-display-hero text-2xl text-white mb-2">
-                Quality Tests Daily
+              <div className="font-display-hero text-2xl sm:text-3xl text-[#ffdf99] font-bold leading-tight mb-3">
+                Purity Ensured Through Advanced Testing
               </div>
               <p className="text-[13px] text-[#f2f0ed]/80 leading-relaxed mb-6">
                 Each lot is tested for SNF levels, fatty acid profiles, somatic cell counts, and zero presence of chemical preservatives or external water dilution.

@@ -37,7 +37,7 @@ export default function App() {
     frequency: 'daily',
     litres: 1.0,
     packaging: 'glass',
-    totalAmount: 2250,
+    totalAmount: 2050,
   });
 
   const handleOpenSubscribe = () => {

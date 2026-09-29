@@ -81,7 +81,7 @@ export const FarmStory: React.FC<FarmStoryProps> = ({ onOpenFarmTour }) => {
 
             <div className="flex items-start gap-4 p-4 rounded-2xl bg-[#f5f3f0] border border-[#042217]/5 transition-all hover:bg-[#efeeeb]">
               <div className="w-10 h-10 rounded-xl bg-[#bcebcc] text-[#3d674f] flex items-center justify-center shrink-0 mt-0.5">
-                <span className="material-symbols-outlined text-[22px]">maps_ar</span>
+                <span className="material-symbols-outlined text-[22px]">map</span>
               </div>
               <div>
                 <h4 className="text-[15px] text-[#042217] font-bold">Direct Farm-to-Home</h4>

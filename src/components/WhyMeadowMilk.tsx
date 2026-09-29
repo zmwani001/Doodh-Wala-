@@ -117,7 +117,7 @@ export const WhyMeadowMilk: React.FC = () => {
                     check
                   </span>
                   <span>
-                    <strong className="text-white">Freshness Within Hours:</strong> Milked at 4:30 AM and placed on your doorstep by 7:30 AM.
+                    <strong className="text-white">Freshness Within Hours:</strong> Freshly milked and delivered with Morning Fresh Delivery As Per Availed Service.
                   </span>
                 </div>
 
