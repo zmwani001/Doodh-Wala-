@@ -24,10 +24,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenSubscribe, onOpenFarmTour }) =
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-12 w-full flex flex-col items-center lg:items-start text-center lg:text-left">
         {/* Top Origin Pill */}
-        <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/15 backdrop-blur-md text-[#ffdf99] text-[12px] font-semibold tracking-wider uppercase mb-8 shadow-sm border border-white/10">
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=Kreeri%2C%20Baramulla%2C%20Kashmir"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/15 backdrop-blur-md text-[#ffdf99] text-[12px] font-semibold tracking-wider uppercase mb-8 shadow-sm border border-white/10 transition-colors hover:bg-white/25"
+          aria-label="Open Kreeri, Baramulla, Kashmir in Google Maps"
+          title="Open in Google Maps"
+        >
           <span className="w-2.5 h-2.5 rounded-full bg-[#ecc15a] animate-ping"></span>
-          <span>📍 Direct from Kreeri, Baramulla, Kashmir • Morning Milking 4:30 AM</span>
-        </div>
+          <span>📍 Direct from Kreeri, Baramulla, Kashmir</span>
+        </a>
 
         {/* Main Headline */}
         <div className="max-w-4xl space-y-4 mb-6">
@@ -83,7 +90,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenSubscribe, onOpenFarmTour }) =
             <span className="hidden sm:inline text-white/30">•</span>
             <span className="flex items-center gap-2">
               <span className="material-symbols-outlined text-[19px] text-[#ffdf99]">schedule</span>
-              Delivered 5:00 AM – 7:30 AM
+              Fresh milk everyday morning delivered to your doorstep
             </span>
           </div>
         </div>
@@ -104,9 +111,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenSubscribe, onOpenFarmTour }) =
             <div className="w-12 h-12 rounded-xl bg-[#042217] flex items-center justify-center shrink-0 text-[#bcebcc]">
               <span className="material-symbols-outlined text-[26px]">science</span>
             </div>
-            <div>
-              <div className="text-[20px] font-bold text-white leading-tight">140+ Tests</div>
-              <div className="text-[13px] text-[#82a291] mt-0.5">Daily purity checks</div>
+            <div className="min-w-0">
+              <div className="text-[15px] font-bold text-white leading-tight">Purity Ensured Through Advanced Testing</div>
             </div>
           </div>
 
