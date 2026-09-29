@@ -18,16 +18,17 @@ export const SubscriptionCustomizer: React.FC<SubscriptionCustomizerProps> = ({
   const [packaging, setPackaging] = useState<PackagingType>('glass');
 
   // Rates
-  const ratePerLitre = frequency === 'monthly' ? 72 : 75;
+  const ratePerLitre = frequency === 'monthly' ? 60 : frequency === 'daily' ? 65 : 63;
   const daysInMonth = frequency === 'alternate' ? 15 : 30;
-  const monthlyTotal = Math.round(litres * daysInMonth * ratePerLitre);
+  const bottleMonthlyCharge = packaging === 'glass' ? 100 : 0;
+  const monthlyTotal = Math.round(litres * daysInMonth * ratePerLitre) + bottleMonthlyCharge;
   const dailyCost = Math.round(litres * ratePerLitre);
 
   const whatsappMessage = `Hello Meadow Milk Kashmir, I would like to start a morning milk subscription:%0A- Plan: ${
     frequency === 'daily' ? 'Daily (7 days/wk)' : frequency === 'alternate' ? 'Alternate Days' : 'Monthly Prepaid Pass'
   }%0A- Quantity: ${litres}L per delivery%0A- Packaging: ${
     packaging === 'glass' ? 'Eco Glass Bottle' : 'Food-Grade Pouch'
-  }%0A- Location: Baramulla, Kashmir%0APlease guide me on starting tomorrow morning!`;
+  }%0A- Monthly glass bottle charge: ₹${bottleMonthlyCharge}%0A- Estimated monthly total: ₹${monthlyTotal}%0A- Location: Baramulla, Kashmir%0APlease guide me on starting tomorrow morning!`;
 
   return (
     <section className="py-24 bg-[#fbf9f6] px-6 lg:px-12 max-w-7xl mx-auto w-full" id="subscription">
@@ -67,7 +68,8 @@ export const SubscriptionCustomizer: React.FC<SubscriptionCustomizerProps> = ({
                 7 days a week, reliable morning delivery.
               </div>
               <div className="font-display-hero text-2xl text-[#042217] font-bold">
-                ₹75<span className="text-[13px] font-normal text-[#424844]"> / L</span>
+                ₹65
+            <span className="text-[13px] font-normal text-[#424844]"> / L</span>
               </div>
             </div>
 
@@ -90,7 +92,7 @@ export const SubscriptionCustomizer: React.FC<SubscriptionCustomizerProps> = ({
                 Delivered on alternate mornings (15 days/mo).
               </div>
               <div className="font-display-hero text-2xl text-[#042217] font-bold">
-                ₹75<span className="text-[13px] font-normal text-[#424844]"> / L</span>
+                ₹63<span className="text-[13px] font-normal text-[#424844]"> / L</span>
               </div>
             </div>
 
@@ -113,7 +115,7 @@ export const SubscriptionCustomizer: React.FC<SubscriptionCustomizerProps> = ({
                 Prepaid 30-day supply with bottle swap.
               </div>
               <div className="font-display-hero text-2xl text-[#042217] font-bold">
-                ₹72<span className="text-[13px] font-normal text-[#424844]"> / L</span>
+                ₹60<span className="text-[13px] font-normal text-[#424844]"> / L</span>
               </div>
             </div>
           </div>
@@ -234,7 +236,7 @@ export const SubscriptionCustomizer: React.FC<SubscriptionCustomizerProps> = ({
             <div className="flex items-center gap-3 p-4 rounded-2xl bg-[#bcebcc]/40 text-[#042217] border border-[#3d674f]/20">
               <span className="material-symbols-outlined text-[24px] text-[#3d674f]">schedule</span>
               <div className="text-[13px] leading-relaxed">
-                <span className="font-bold">Guaranteed Delivery Slot:</span> Between 5:00 AM and 7:30 AM quietly at your main door or doorstep milk bag in Baramulla.
+                <span className="font-bold">Delivery Service:</span> Morning Fresh Delivery As Per Availed Service.
               </div>
             </div>
           </div>
@@ -283,12 +285,12 @@ export const SubscriptionCustomizer: React.FC<SubscriptionCustomizerProps> = ({
 
             <div className="flex justify-between items-center py-1.5 border-b border-[#042217]/5">
               <span className="text-[14px] text-[#424844]">Doorstep Delivery</span>
-              <span className="text-[14px] text-[#3d674f] font-bold">FREE ($0)</span>
+              <span className="text-[14px] text-[#3d674f] font-bold">FREE (0)</span>
             </div>
 
             <div className="flex justify-between items-center py-1.5">
-              <span className="text-[14px] text-[#424844]">Bottle Security Deposit</span>
-              <span className="text-[14px] text-[#042217] font-bold">₹0 (Waived for New Subscribers)</span>
+              <span className="text-[14px] text-[#424844]">Glass Bottle Charge</span>
+              <span className="text-[14px] text-[#042217] font-bold">₹{bottleMonthlyCharge} / month</span>
             </div>
           </div>
 

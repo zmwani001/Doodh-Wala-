@@ -84,7 +84,7 @@ export const DeliveryHubModal: React.FC<DeliveryHubModalProps> = ({ isOpen, onCl
           <div className="flex items-baseline justify-between pt-1">
             <div>
               <div className="text-[18px] font-bold text-[#042217]">
-                Tomorrow Dawn (5:30 AM – 7:00 AM)
+                Morning Fresh Delivery As Per Availed Service
               </div>
               <div className="text-[13px] text-[#424844]">
                 {isPausedTomorrow

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { BrandLogo } from './BrandLogo';
 
 interface HeaderProps {
   onOpenSubscribe: () => void;
@@ -17,7 +18,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSubscribe, onOpenDeliveryH
     { name: 'Quality', href: '#quality', id: 'quality' },
     { name: 'Subscription', href: '#subscription', id: 'subscription' },
     { name: 'Delivery', href: '#delivery', id: 'delivery' },
-    { name: 'FAQs', href: '#faq', id: 'faq' },
+    // { name: 'FAQs', href: '#faq', id: 'faq' },
   ];
 
   return (
@@ -25,11 +26,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSubscribe, onOpenDeliveryH
       <div className="h-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between gap-4">
         {/* Brand Area */}
         <a href="#hero" className="flex items-center gap-3 shrink-0 group focus:outline-none">
-          <img
-            alt="Meadow Milk Brand Logo"
-            className="h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBx-hcZSH2FQ2BCWtYFMt_OnT1uqoLfg4HzZRcQiC4wjCkrokOAnLOB0hzuTvfbrJQg7LqWidwDO2mAfVZ_1x3A9_AqaRejzJIqvKdYp_Tgp22jIwYC7as1VQBS1EHRxC57QdO-n9RMZRJUQ1Ez7FKOxdZK4pUpMk5QVRXZ4AcWFG7hu2sXp_oLjrDMJz8rb9Nz5XlBN3V1djUXEDTNBPdgfLJiboI93qq1dKwh35SzA-E3qQIGeyU"
-          />
+          <BrandLogo className="h-11 w-11 shrink-0 rounded-lg transition-transform duration-300 group-hover:scale-105" />
           <div className="flex flex-col">
             <span className="font-display-hero text-[22px] tracking-tight leading-none text-[#042217] font-bold">
               MEADOW MILK
@@ -63,15 +60,15 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSubscribe, onOpenDeliveryH
 
         {/* Actions Zone */}
         <div className="flex items-center gap-3 shrink-0">
-          <a
-            className="hidden md:flex items-center gap-1.5 text-[#3d674f] hover:text-[#042217] transition-colors text-[13px] font-semibold px-2 py-1 rounded-lg hover:bg-[#efeeeb]"
+          {/* <a
+            className="hidden xl:flex items-center gap-1.5 text-[#3d674f] hover:text-[#042217] transition-colors text-[13px] font-semibold px-2 py-1 rounded-lg hover:bg-[#efeeeb]"
             href="https://wa.me/919906000000?text=Hello%20Meadow%20Milk%2C%20I%20have%20an%20inquiry%20regarding%20morning%20milk%20delivery."
             rel="noopener"
             target="_blank"
           >
             <span className="material-symbols-outlined text-[19px]">chat</span>
             <span className="hidden lg:inline">Morning Support</span>
-          </a>
+          </a> */}
 
           <button
             onClick={onOpenSubscribe}

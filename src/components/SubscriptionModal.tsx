@@ -22,7 +22,7 @@ export const SubscriptionModal: React.FC<SubscriptionModalProps> = ({
   const [address, setAddress] = useState('');
   const [area, setArea] = useState('Baramulla Town');
   const [instructions, setInstructions] = useState('Place quietly in doorstep milk bag');
-  const [startDate, setStartDate] = useState('Tomorrow Morning (5:30 AM)');
+  const [startDate, setStartDate] = useState('Tomorrow Morning');
   const [isSuccess, setIsSuccess] = useState(false);
   const [subscriptionId, setSubscriptionId] = useState('');
 
@@ -37,6 +37,7 @@ export const SubscriptionModal: React.FC<SubscriptionModalProps> = ({
     setIsSuccess(true);
   };
 
+  const bottleMonthlyCharge = initialConfig.packaging === 'glass' ? 100 : 0;
   const whatsappOrderUrl = `https://wa.me/919906000000?text=${encodeURIComponent(
     `Hello Meadow Milk Kashmir!%0A*New Subscription Order: ${subscriptionId}*%0A%0A• Name: ${name}%0A• Phone: ${phone}%0A• Area: ${area}%0A• Address: ${address}%0A• Plan: ${
       initialConfig.frequency === 'daily'
@@ -46,7 +47,7 @@ export const SubscriptionModal: React.FC<SubscriptionModalProps> = ({
         : 'Monthly Prepaid Pass'
     }%0A• Quantity: ${initialConfig.litres} Litre/morning%0A• Packaging: ${
       initialConfig.packaging === 'glass' ? 'Eco Glass Bottle' : 'Food-Grade Pouch'
-    }%0A• First Morning: ${startDate}%0A• Note: ${instructions}%0A%0APlease confirm my morning delivery schedule!`
+    }%0A• Monthly glass bottle charge: ₹${bottleMonthlyCharge}%0A• Estimated monthly total: ₹${initialConfig.totalAmount}%0A• First Morning: ${startDate}%0A• Note: ${instructions}%0A%0APlease confirm my morning delivery schedule!`
   )}`;
 
   return (
@@ -83,7 +84,10 @@ export const SubscriptionModal: React.FC<SubscriptionModalProps> = ({
                     : 'Monthly Pass'}
                 </div>
                 <div className="text-[12px] text-[#424844]">
-                  {initialConfig.packaging === 'glass' ? 'Eco Glass Bottle Swap' : 'Food-Grade Sealed Pouch'} • Delivery: 5:00 AM – 7:30 AM
+                  {initialConfig.packaging === 'glass' ? 'Eco Glass Bottle Swap' : 'Food-Grade Sealed Pouch'} • Morning Fresh Delivery As Per Availed Service
+                </div>
+                <div className="text-[12px] text-[#424844]">
+                  Glass bottle charge: ₹{bottleMonthlyCharge} / month
                 </div>
               </div>
               <div className="text-right">
@@ -169,7 +173,7 @@ export const SubscriptionModal: React.FC<SubscriptionModalProps> = ({
                     onChange={(e) => setStartDate(e.target.value)}
                     className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#042217]/15 focus:outline-none focus:ring-2 focus:ring-[#3d674f] text-[14px]"
                   >
-                    <option value="Tomorrow Morning (5:30 AM)">Tomorrow Morning (5:30 AM)</option>
+                    <option value="Tomorrow Morning">Tomorrow Morning</option>
                     <option value="Day After Tomorrow">Day After Tomorrow</option>
                     <option value="1st of Next Month">1st of Next Month</option>
                   </select>

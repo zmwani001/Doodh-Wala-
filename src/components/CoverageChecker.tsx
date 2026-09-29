@@ -33,7 +33,25 @@ export const CoverageChecker: React.FC = () => {
       });
     } else {
       // General heuristic for Kashmir queries
-      const generalActiveKeywords = ['baramulla', 'kreeri', 'sopore', 'delina', 'kanispora', '193101', '193198', '193201', 'ushkara', 'sangrama'];
+      const generalActiveKeywords = [
+        'baramulla',
+        'kreeri',
+        'sopore',
+        'delina',
+        'kanispora',
+        '193101',
+        '193198',
+        '193201',
+        'ushkara',
+        'sangrama',
+        'noor bagh',
+        'sidiq colony',
+        'new colony',
+        'iqbal nagar',
+        'moomin abad',
+        'drangbal',
+        'khawaja bagh',
+      ];
       const isGeneralActive = generalActiveKeywords.some((k) => query.includes(k));
 
       setCheckResult({
@@ -41,7 +59,7 @@ export const CoverageChecker: React.FC = () => {
         isCovered: isGeneralActive,
         isExpanding: !isGeneralActive,
         zoneName: searchTerm.trim(),
-        deliveryWindow: isGeneralActive ? '05:00 AM – 07:30 AM' : 'Waitlist Route Activation',
+        deliveryWindow: isGeneralActive ? 'Morning Fresh Delivery As Per Availed Service' : 'Waitlist Route Activation',
       });
     }
   };
@@ -54,7 +72,7 @@ export const CoverageChecker: React.FC = () => {
       isCovered: matched ? matched.status === 'active' : true,
       isExpanding: matched ? matched.status === 'expanding' : false,
       zoneName: matched?.name || sectorName,
-      deliveryWindow: matched?.deliveryWindow || '05:00 AM – 07:30 AM',
+      deliveryWindow: matched?.deliveryWindow || 'Morning Fresh Delivery As Per Availed Service',
     });
   };
 
@@ -73,7 +91,7 @@ export const CoverageChecker: React.FC = () => {
             </h2>
 
             <p className="text-[15px] sm:text-[16px] text-[#424844] leading-relaxed">
-              Our temperature-regulated delivery fleet drives out of Kreeri at 5:00 AM, quietly reaching residential gates before households begin their morning chai.
+              Our temperature-regulated delivery fleet brings fresh milk from Kreeri to residential doorsteps each morning.
             </p>
 
             <div className="space-y-4">
@@ -92,8 +110,8 @@ export const CoverageChecker: React.FC = () => {
                   <span className="material-symbols-outlined text-[24px]">alarm</span>
                 </div>
                 <div>
-                  <div className="text-[14px] font-bold text-[#042217]">Delivery Window</div>
-                  <div className="text-[13px] text-[#424844]">5:00 AM to 7:30 AM (Monday through Sunday)</div>
+                  <div className="text-[14px] font-bold text-[#042217]">Delivery Service</div>
+                  <div className="text-[13px] text-[#424844]">Morning Fresh Delivery As Per Availed Service</div>
                 </div>
               </div>
 
@@ -164,7 +182,7 @@ export const CoverageChecker: React.FC = () => {
                             Good News! Active Morning Delivery in {checkResult.zoneName}
                           </div>
                           <div className="text-[13px] text-[#424844] mt-0.5">
-                            Standard window: <strong>{checkResult.deliveryWindow}</strong>. Orders placed by 8:00 PM start tomorrow morning!
+                            <strong>{checkResult.deliveryWindow}</strong>. Orders placed by 8:00 PM start tomorrow morning!
                           </div>
                         </div>
                       </div>
@@ -193,18 +211,29 @@ export const CoverageChecker: React.FC = () => {
                   Popular Verified Sectors (Click to check)
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  {['Baramulla Old Town', 'Kanispora', 'Delina', 'Kreeri Proper', 'Ushkara', 'Sopore'].map(
-                    (sec) => (
-                      <button
-                        key={sec}
-                        type="button"
-                        onClick={() => handleSectorClick(sec)}
-                        className="px-3 py-1.5 bg-[#eae8e5] hover:bg-[#bcebcc] text-[#042217] rounded-full text-[12px] font-semibold transition-colors border border-[#042217]/5"
-                      >
-                        {sec}
-                      </button>
-                    )
-                  )}
+                  {[
+                    'Baramulla Old Town',
+                    'Noor Bagh, Baramulla',
+                    'Sidiq Colony, Baramulla',
+                    'New Colony, Baramulla',
+                    'Iqbal Nagar, Baramulla',
+                    'Moomin Abad, Baramulla',
+                    'Kanispora',
+                    'Delina',
+                    'Kreeri Proper',
+                    'Ushkara',
+                    'Sopore Town & Model Town',
+                    'Noor Bagh, Sopore',
+                  ].map((sec) => (
+                    <button
+                      key={sec}
+                      type="button"
+                      onClick={() => handleSectorClick(sec)}
+                      className="px-3 py-1.5 bg-[#eae8e5] hover:bg-[#bcebcc] text-[#042217] rounded-full text-[12px] font-semibold transition-colors border border-[#042217]/5"
+                    >
+                      {sec}
+                    </button>
+                  ))}
                 </div>
               </div>
             </div>

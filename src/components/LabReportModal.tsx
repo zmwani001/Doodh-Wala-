@@ -10,8 +10,8 @@ export const LabReportModal: React.FC<LabReportModalProps> = ({ isOpen, onClose 
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 backdrop-blur-sm p-4 overflow-y-auto">
-      <div className="bg-[#fbf9f6] rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl border border-[#042217]/10 my-8">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 backdrop-blur-sm p-4">
+      <div className="bg-[#fbf9f6] rounded-3xl max-w-2xl w-full max-h-[calc(100dvh-2rem)] overflow-y-auto overscroll-contain p-5 sm:p-8 shadow-2xl border border-[#042217]/10">
         {/* Certificate Header */}
         <div className="flex items-center justify-between pb-4 border-b border-[#042217]/10 mb-6">
           <div className="flex items-center gap-3">
@@ -36,22 +36,14 @@ export const LabReportModal: React.FC<LabReportModalProps> = ({ isOpen, onClose 
         </div>
 
         {/* Certificate Meta Box */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 p-4 rounded-2xl bg-[#f5f3f0] border border-[#042217]/5 mb-6 text-[12px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 p-4 rounded-2xl bg-[#f5f3f0] border border-[#042217]/5 mb-6 text-[12px]">
           <div>
             <div className="text-[#424844]">Batch Reference</div>
             <div className="font-bold text-[#042217] font-mono">{TODAY_BATCH_REPORT.batchId}</div>
           </div>
           <div>
-            <div className="text-[#424844]">Harvest Date</div>
-            <div className="font-bold text-[#042217]">{TODAY_BATCH_REPORT.date}</div>
-          </div>
-          <div>
-            <div className="text-[#424844]">Milking Protocol</div>
-            <div className="font-bold text-[#042217]">04:30 AM Automated</div>
-          </div>
-          <div>
-            <div className="text-[#424844]">Dispatch Temp</div>
-            <div className="font-bold text-[#3d674f]">{TODAY_BATCH_REPORT.temperatureAtDispatch}</div>
+            <div className="text-[#424844]">Freshly Milked and Collected</div>
+            <div className="font-bold text-[#042217]">{TODAY_BATCH_REPORT.date} · 6:00 AM</div>
           </div>
         </div>
 
@@ -76,26 +68,20 @@ export const LabReportModal: React.FC<LabReportModalProps> = ({ isOpen, onClose 
           </div>
         </div>
 
-        {/* Full Parameter Table */}
         <div className="border border-[#042217]/10 rounded-2xl overflow-hidden mb-6">
-          <div className="bg-[#efeeeb] px-4 py-2.5 text-[12px] font-bold text-[#042217] uppercase tracking-wider flex justify-between">
-            <span>Test Parameter</span>
-            <span>Observed Reading / Result</span>
+          <div className="bg-[#efeeeb] px-4 py-2.5 text-[12px] font-bold text-[#042217] uppercase tracking-wider">
+            Parameters tested include:
           </div>
-          <div className="divide-y divide-[#042217]/5 bg-white text-[13px]">
-            {TODAY_BATCH_REPORT.parameters.map((param, i) => (
-              <div key={i} className="px-4 py-2.5 flex items-center justify-between hover:bg-[#fbf9f6]">
-                <div className="flex items-center gap-2">
-                  <span className="material-symbols-outlined text-[16px] text-[#3d674f]">check_circle</span>
-                  <span className="font-medium text-[#1b1c1a]">{param.name}</span>
-                </div>
-                <div className="text-right">
-                  <span className="font-bold text-[#042217]">{param.result}</span>
-                  <span className="text-[11px] text-[#424844] block font-mono">Benchmark: {param.expected}</span>
-                </div>
-              </div>
-            ))}
-          </div>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 bg-white px-4 py-4 text-[13px] text-[#1b1c1a]">
+            <li className="flex items-center gap-2"><span aria-hidden="true">🥛</span><strong>Fat Content</strong></li>
+            <li className="flex items-center gap-2"><span aria-hidden="true">💧</span><strong>SNF (Solids-Not-Fat)</strong></li>
+            <li className="flex items-center gap-2"><span aria-hidden="true">⚖️</span><strong>Density</strong></li>
+            <li className="flex items-center gap-2"><span aria-hidden="true">🍬</span><strong>Lactose</strong></li>
+            <li className="flex items-center gap-2"><span aria-hidden="true">🧪</span><strong>Protein</strong></li>
+            <li className="flex items-center gap-2"><span aria-hidden="true">💦</span><strong>Added Water Detection</strong></li>
+            <li className="flex items-center gap-2"><span aria-hidden="true">🌡️</span><strong>Temperature</strong></li>
+            <li className="flex items-center gap-2"><span aria-hidden="true">📊</span><strong>Milk Conductivity</strong></li>
+          </ul>
         </div>
 
         {/* Chemist Sign-Off */}

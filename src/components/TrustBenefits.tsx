@@ -27,14 +27,14 @@ const BENEFITS = [
   },
   {
     icon: 'biotech',
-    title: '140+ Quality Tests Daily',
+    title: 'Purity Ensured Through Advanced Testing',
     description: 'Stringent safety and purity checks performed in our daily protocol to guarantee uncompromising freshness every batch.',
     tag: 'Transparent lab certification',
   },
   {
     icon: 'wb_twilight',
     title: 'Assured Morning Delivery',
-    description: 'Fresh milk delivered quietly to your doorstep between 5:00 AM and 7:30 AM before the city awakes for morning chai.',
+    description: 'Fresh milk delivered to your doorstep with Morning Fresh Delivery As Per Availed Service.',
     tag: 'Punctual insulated delivery',
   },
   {

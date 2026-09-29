@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrandLogo } from './BrandLogo';
 
 export const Footer: React.FC = () => {
   return (
@@ -8,14 +9,7 @@ export const Footer: React.FC = () => {
           {/* Brand Info */}
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center gap-3">
-              <img
-                alt="Meadow Milk Brand Logo"
-                className="h-8 w-auto object-contain brightness-0 invert"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBx-hcZSH2FQ2BCWtYFMt_OnT1uqoLfg4HzZRcQiC4wjCkrokOAnLOB0hzuTvfbrJQg7LqWidwDO2mAfVZ_1x3A9_AqaRejzJIqvKdYp_Tgp22jIwYC7as1VQBS1EHRxC57QdO-n9RMZRJUQ1Ez7FKOxdZK4pUpMk5QVRXZ4AcWFG7hu2sXp_oLjrDMJz8rb9Nz5XlBN3V1djUXEDTNBPdgfLJiboI93qq1dKwh35SzA-E3qQIGeyU"
-              />
-              <span className="font-display-hero text-xl font-bold text-white tracking-tight">
-                MEADOW MILK
-              </span>
+              <BrandLogo className="h-12 w-12 rounded-lg" />
             </div>
 
             <p className="font-display-hero text-lg text-[#ffdf99] font-normal italic">
@@ -87,7 +81,7 @@ export const Footer: React.FC = () => {
               </li>
               <li className="flex items-center gap-2">
                 <span className="material-symbols-outlined text-[17px] text-[#ffdf99]">science</span>
-                140+ Daily Quality Tests
+                Purity Ensured Through Advanced Testing
               </li>
               <li className="flex items-center gap-2">
                 <span className="material-symbols-outlined text-[17px] text-[#ffdf99]">ac_unit</span>
