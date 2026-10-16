@@ -73,21 +73,34 @@
   vertical-align: middle;
 }
 
+.coverage-results-scroll {
+  max-height: min(55vh, 28rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-color: #aab99f #f1f1ed;
+  scrollbar-width: thin;
+}
+
 @media print {
-  body * {
-    visibility: hidden;
+  @page {
+    margin: 12mm;
   }
 
-  .lab-report-overlay,
-  .lab-report-content,
-  .lab-report-content * {
-    visibility: visible;
+  body > #root > div {
+    min-height: 0 !important;
+    height: auto !important;
+    background: white !important;
+  }
+
+  body > #root > div > :not(.lab-report-overlay) {
+    display: none !important;
   }
 
   .lab-report-overlay {
     position: absolute;
-    inset: 0;
+    inset: 0 auto auto 0;
     display: block;
+    width: 100%;
     padding: 0;
     background: white;
     backdrop-filter: none;
@@ -100,9 +113,11 @@
     overflow: visible;
     border: 0;
     border-radius: 0;
+    padding: 0;
     box-shadow: none;
   }
 
+  .lab-report-close,
   .lab-report-actions {
     display: none !important;
   }

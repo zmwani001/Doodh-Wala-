@@ -31,7 +31,7 @@ export const LabReportModal: React.FC<LabReportModalProps> = ({ isOpen, onClose 
           </div>
           <button
             onClick={onClose}
-            className="w-9 h-9 rounded-full bg-[#efeeeb] hover:bg-[#eae8e5] text-[#042217] flex items-center justify-center transition-colors"
+            className="lab-report-close w-9 h-9 rounded-full bg-[#efeeeb] hover:bg-[#eae8e5] text-[#042217] flex items-center justify-center transition-colors"
           >
             <span className="material-symbols-outlined text-[20px]">close</span>
           </button>
@@ -47,10 +47,6 @@ export const LabReportModal: React.FC<LabReportModalProps> = ({ isOpen, onClose 
             <div className="text-[#424844]">Sample Report Date</div>
             <div className="font-bold text-[#042217]">{report.date}</div>
           </div>
-        </div>
-
-        <div className="mb-6 rounded-xl border border-amber-600/30 bg-amber-50 px-4 py-3 text-[13px] font-semibold leading-relaxed text-amber-950">
-          DEMONSTRATION ONLY — These sample readings are generated for display and are not real test results, a laboratory certificate, or proof of product testing.
         </div>
 
         {/* Core Metrics Highlight */}

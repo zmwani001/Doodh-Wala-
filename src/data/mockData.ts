@@ -21,7 +21,7 @@ export const getTodayDemoReport = (now = new Date()): LabBatchReport => {
     waterAdulteration: 'Sample value only',
     starchUreaDetergent: 'Not tested · sample report',
     microbialQuality: 'Not tested · sample report',
-    chemistName: 'No reviewer · sample data only',
+    chemistName: 'Amina Wani · fictional demo name',
     signatureVerified: false,
     parameters: [
       { name: 'Milk Fat (illustrative)', expected: 'For demonstration only', result: `${fat}%`, status: 'passed' },
