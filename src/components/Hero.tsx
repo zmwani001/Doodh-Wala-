@@ -1,4 +1,5 @@
 import React from 'react';
+import cowHeroImage from '../../assets/COW.jpg';
 
 interface HeroProps {
   onOpenSubscribe: () => void;
@@ -11,10 +12,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenSubscribe }) => {
       className="relative flex min-h-[560px] items-center overflow-hidden bg-[#233d2d] text-white sm:min-h-[600px] lg:min-h-[640px]"
     >
       <img
-        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWJ2fROuQ1RtzbANxtG5-Aj8hoUEuCaZHYuf6agNh8ls6ezksgVApL4AWwTqUh_5qE5cXlfZHMbnpRyt_egaya6mNqXU70GgGCYaqUKfDvvjziDT-ZpchftsPxd6jldVZMoJgeQUWAqsecEQokZeLtC2cHfjwihTFqvzllQ2KeNlBkw7UNSAiYtcgnMw1TcoaY09EtHjFsY4yFavqAIwe_VACQbbbMLBt5KE3ZghaIOi23PIIq7QI"
-        alt="A pastoral Kashmir landscape"
+        src={cowHeroImage}
+        alt="Cows grazing in a green pasture at sunrise"
         fetchPriority="high"
-        className="absolute inset-0 h-full w-full object-cover object-center"
+        className="absolute inset-0 h-full w-full object-cover object-[center_75%]"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-[#16291f]/90 via-[#16291f]/70 to-[#16291f]/15" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#16291f]/45 via-transparent to-[#16291f]/10" />
