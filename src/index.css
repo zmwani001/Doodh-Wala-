@@ -73,3 +73,37 @@
   vertical-align: middle;
 }
 
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .lab-report-overlay,
+  .lab-report-content,
+  .lab-report-content * {
+    visibility: visible;
+  }
+
+  .lab-report-overlay {
+    position: absolute;
+    inset: 0;
+    display: block;
+    padding: 0;
+    background: white;
+    backdrop-filter: none;
+  }
+
+  .lab-report-content {
+    width: 100%;
+    max-width: none;
+    max-height: none;
+    overflow: visible;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .lab-report-actions {
+    display: none !important;
+  }
+}

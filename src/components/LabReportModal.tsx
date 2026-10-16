@@ -1,5 +1,5 @@
 import React from 'react';
-import { TODAY_BATCH_REPORT } from '../data/mockData';
+import { getTodayDemoReport } from '../data/mockData';
 
 interface LabReportModalProps {
   isOpen: boolean;
@@ -7,11 +7,13 @@ interface LabReportModalProps {
 }
 
 export const LabReportModal: React.FC<LabReportModalProps> = ({ isOpen, onClose }) => {
+  const report = getTodayDemoReport();
+
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 backdrop-blur-sm p-4">
-      <div className="bg-[#fbf9f6] rounded-3xl max-w-2xl w-full max-h-[calc(100dvh-2rem)] overflow-y-auto overscroll-contain p-5 sm:p-8 shadow-2xl border border-[#042217]/10">
+    <div className="lab-report-overlay fixed inset-0 z-50 flex items-center justify-center bg-black/75 backdrop-blur-sm p-4">
+      <div className="lab-report-content bg-[#fbf9f6] rounded-3xl max-w-2xl w-full max-h-[calc(100dvh-2rem)] overflow-y-auto overscroll-contain p-5 sm:p-8 shadow-2xl border border-[#042217]/10">
         {/* Certificate Header */}
         <div className="flex items-center justify-between pb-4 border-b border-[#042217]/10 mb-6">
           <div className="flex items-center gap-3">
@@ -23,7 +25,7 @@ export const LabReportModal: React.FC<LabReportModalProps> = ({ isOpen, onClose 
                 Kreeri Dairy Estate QC Laboratory
               </span>
               <h3 className="font-display-hero text-2xl font-bold text-[#042217]">
-                Daily Batch Purity Certificate
+                Illustrative Daily Batch Report
               </h3>
             </div>
           </div>
@@ -38,33 +40,37 @@ export const LabReportModal: React.FC<LabReportModalProps> = ({ isOpen, onClose 
         {/* Certificate Meta Box */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 p-4 rounded-2xl bg-[#f5f3f0] border border-[#042217]/5 mb-6 text-[12px]">
           <div>
-            <div className="text-[#424844]">Batch Reference</div>
-            <div className="font-bold text-[#042217] font-mono">{TODAY_BATCH_REPORT.batchId}</div>
+            <div className="text-[#424844]">Sample Batch Reference</div>
+            <div className="font-bold text-[#042217] font-mono">{report.batchId}</div>
           </div>
           <div>
-            <div className="text-[#424844]">Freshly Milked and Collected</div>
-            <div className="font-bold text-[#042217]">{TODAY_BATCH_REPORT.date} · 6:00 AM</div>
+            <div className="text-[#424844]">Sample Report Date</div>
+            <div className="font-bold text-[#042217]">{report.date}</div>
           </div>
+        </div>
+
+        <div className="mb-6 rounded-xl border border-amber-600/30 bg-amber-50 px-4 py-3 text-[13px] font-semibold leading-relaxed text-amber-950">
+          DEMONSTRATION ONLY — These sample readings are generated for display and are not real test results, a laboratory certificate, or proof of product testing.
         </div>
 
         {/* Core Metrics Highlight */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
           <div className="p-4 rounded-xl bg-white border border-[#042217]/10 text-center">
             <span className="text-[11px] text-[#424844] uppercase font-bold block mb-1">Natural Whole Fat</span>
-            <span className="font-display-hero text-2xl font-bold text-[#042217]">4.15%</span>
-            <span className="text-[11px] text-[#3d674f] block mt-0.5">Optimal Malai Layer</span>
+            <span className="font-display-hero text-2xl font-bold text-[#042217]">{report.fatContent}</span>
+            <span className="text-[11px] text-[#3d674f] block mt-0.5">Illustrative sample value</span>
           </div>
 
           <div className="p-4 rounded-xl bg-white border border-[#042217]/10 text-center">
             <span className="text-[11px] text-[#424844] uppercase font-bold block mb-1">Solids-Not-Fat (SNF)</span>
-            <span className="font-display-hero text-2xl font-bold text-[#042217]">8.82%</span>
-            <span className="text-[11px] text-[#3d674f] block mt-0.5">Exceeds 8.5% Standard</span>
+            <span className="font-display-hero text-2xl font-bold text-[#042217]">{report.snfContent}</span>
+            <span className="text-[11px] text-[#3d674f] block mt-0.5">Illustrative sample value</span>
           </div>
 
           <div className="p-4 rounded-xl bg-white border border-[#042217]/10 text-center">
-            <span className="text-[11px] text-[#424844] uppercase font-bold block mb-1">Added Water</span>
-            <span className="font-display-hero text-2xl font-bold text-[#3d674f]">0.00%</span>
-            <span className="text-[11px] text-[#3d674f] block mt-0.5">Cryoscope Freezing Valid</span>
+            <span className="text-[11px] text-[#424844] uppercase font-bold block mb-1">Sample Cold-Chain Temperature</span>
+            <span className="font-display-hero text-2xl font-bold text-[#3d674f]">{report.temperatureAtDispatch}</span>
+            <span className="text-[11px] text-[#3d674f] block mt-0.5">Illustrative sample value</span>
           </div>
         </div>
 
@@ -87,18 +93,18 @@ export const LabReportModal: React.FC<LabReportModalProps> = ({ isOpen, onClose 
         {/* Chemist Sign-Off */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-2xl bg-[#f5f3f0] border border-[#042217]/5 mb-6 text-[12px]">
           <div>
-            <div className="text-[#424844]">Certified &amp; Approved by:</div>
-            <div className="font-bold text-[#042217] text-[13px]">{TODAY_BATCH_REPORT.chemistName}</div>
-            <div className="text-[#3d674f]">Lead Technologist, Kreeri Dairy Testing Center</div>
+            <div className="text-[#424844]">Reviewer:</div>
+            <div className="font-bold text-[#042217] text-[13px]">{report.chemistName}</div>
+            <div className="text-[#3d674f]">No actual laboratory review performed</div>
           </div>
-          <div className="flex items-center gap-2 text-[#3d674f] font-bold text-[12px] bg-white px-3 py-1.5 rounded-full border border-[#3d674f]/20">
-            <span className="material-symbols-outlined text-[18px]">verified_user</span>
-            <span>Digitally Verified &amp; Cleared for Morning Transit</span>
+          <div className="flex items-center gap-2 text-amber-900 font-bold text-[12px] bg-white px-3 py-1.5 rounded-full border border-amber-700/20">
+            <span className="material-symbols-outlined text-[18px]">info</span>
+            <span>Sample only · not verified</span>
           </div>
         </div>
 
         {/* Actions */}
-        <div className="flex items-center justify-end gap-3">
+        <div className="lab-report-actions flex items-center justify-end gap-3">
           <button
             onClick={() => window.print()}
             className="px-5 py-2.5 rounded-full bg-[#efeeeb] hover:bg-[#eae8e5] text-[#042217] text-[13px] font-bold flex items-center gap-1.5 transition-colors"

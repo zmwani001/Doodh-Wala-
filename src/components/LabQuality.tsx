@@ -37,7 +37,7 @@ export const LabQuality: React.FC<LabQualityProps> = ({ onOpenLabReport }) => {
                 className="inline-flex items-center gap-2 bg-[#ffdf99] text-[#251a00] hover:bg-[#ecc15a] text-[13px] font-bold px-5 py-2.5 rounded-full transition-all duration-200 shadow-md"
               >
                 <span className="material-symbols-outlined text-[18px]">verified</span>
-                <span>View Today&apos;s Lab Report</span>
+                <span>View Today&apos;s Sample Report</span>
               </button>
             </div>
 
