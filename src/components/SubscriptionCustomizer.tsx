@@ -24,7 +24,7 @@ export const SubscriptionCustomizer: React.FC<SubscriptionCustomizerProps> = ({
   const monthlyTotal = Math.round(litres * daysInMonth * ratePerLitre) + bottleMonthlyCharge;
   const dailyCost = Math.round(litres * ratePerLitre);
 
-  const whatsappMessage = `Hello Meadow Milk Kashmir, I would like to start a morning milk subscription:%0A- Plan: ${
+  const whatsappMessage = `Hello Pakizah Milk Kashmir, I would like to start a morning milk subscription:%0A- Plan: ${
     frequency === 'daily' ? 'Daily (7 days/wk)' : frequency === 'alternate' ? 'Alternate Days' : 'Monthly Prepaid Pass'
   }%0A- Quantity: ${litres}L per delivery%0A- Packaging: ${
     packaging === 'glass' ? 'Eco Glass Bottle' : 'Food-Grade Pouch'
@@ -40,7 +40,7 @@ export const SubscriptionCustomizer: React.FC<SubscriptionCustomizerProps> = ({
           Fresh Milk, Every Morning. Automatically.
         </h2>
         <p className="text-[15px] sm:text-[16px] text-[#424844]">
-          Choose your daily quantity and let Meadow Milk take care of the rest. Cancel, pause, or adjust anytime via WhatsApp.
+          Choose your daily quantity and let Pakizah Milk take care of the rest. Cancel, pause, or adjust anytime via WhatsApp.
         </p>
       </div>
 

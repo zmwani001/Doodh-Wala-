@@ -52,6 +52,16 @@ export const COVERAGE_ZONES: CoverageZone[] = [
 
 export const CUSTOMER_REVIEWS: ReviewItem[] = [
   {
+    id: 'rev-0',
+    name: 'Insha Bint Mushtaq',
+    location: 'Kreeri, Baramulla',
+    rating: 5,
+    avatarText: 'IM',
+    comment: 'I have been very impressed with the quality of this company’s milk. Their organic milk tastes fresh, creamy, and natural, and it is clear that they take great care in maintaining high standards. The customer support team is also friendly, responsive, and helpful whenever assistance is needed. Overall, this is a trustworthy company that provides excellent products and service. Highly recommended!',
+    subscriptionType: '2 Litre Daily · Eco Glass Bottle',
+    date: 'Subscribed since 10 months',
+  },
+  {
     id: 'rev-1',
     name: 'Farooq Ahmad Lone',
     location: 'Baramulla Town (Near Old Bus Stand)',
@@ -87,9 +97,19 @@ export const CUSTOMER_REVIEWS: ReviewItem[] = [
     location: 'Delina, Baramulla',
     rating: 5,
     avatarText: 'ZB',
-    comment: 'Our morning nun-chai with kandur girda tastes sublime with Meadow Milk. When boiled, it creates thick golden cream. The glass bottles are always sanitized and sealed tightly.',
+    comment: 'Our morning nun-chai with kandur girda tastes sublime with Pakizah Milk. When boiled, it creates thick golden cream. The glass bottles are always sanitized and sealed tightly.',
     subscriptionType: '1 Litre Daily · Glass Bottle',
     date: 'Subscribed since 4 months',
+  },
+  {
+    id: 'rev-5',
+    name: 'Amer Ashraf Rawa',
+    location: 'Green Town, Sopore',
+    rating: 5,
+    avatarText: 'AR',
+    comment: 'The milk is very fresh, rich, and naturally tasty. I have been using it daily for my family, and it feels clean and trustworthy from the very first delivery. The service is reliable, and the quality is consistent every morning. It has become part of our daily routine and I highly recommend it.',
+    subscriptionType: '3 Litre Daily · Eco Glass Bottle',
+    date: 'Subscribed since 7 months',
   },
 ];
 

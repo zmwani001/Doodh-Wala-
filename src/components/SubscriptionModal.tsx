@@ -32,14 +32,14 @@ export const SubscriptionModal: React.FC<SubscriptionModalProps> = ({
     e.preventDefault();
     if (!name.trim() || !phone.trim() || !address.trim()) return;
 
-    const newId = `MM-KMR-${Math.floor(1000 + Math.random() * 9000)}`;
+    const newId = `PM-KMR-${Math.floor(1000 + Math.random() * 9000)}`;
     setSubscriptionId(newId);
     setIsSuccess(true);
   };
 
   const bottleMonthlyCharge = initialConfig.packaging === 'glass' ? 100 : 0;
   const whatsappOrderUrl = `https://wa.me/919906000000?text=${encodeURIComponent(
-    `Hello Meadow Milk Kashmir!%0A*New Subscription Order: ${subscriptionId}*%0A%0A• Name: ${name}%0A• Phone: ${phone}%0A• Area: ${area}%0A• Address: ${address}%0A• Plan: ${
+    `Hello Pakizah Milk Kashmir!%0A*New Subscription Order: ${subscriptionId}*%0A%0A• Name: ${name}%0A• Phone: ${phone}%0A• Area: ${area}%0A• Address: ${address}%0A• Plan: ${
       initialConfig.frequency === 'daily'
         ? 'Daily Milk (7 days/wk)'
         : initialConfig.frequency === 'alternate'
@@ -228,7 +228,7 @@ export const SubscriptionModal: React.FC<SubscriptionModalProps> = ({
                 Subscription Confirmed
               </span>
               <h3 className="font-display-hero text-3xl font-bold text-[#042217]">
-                Welcome to Meadow Milk!
+                Welcome to Pakizah Milk!
               </h3>
               <p className="text-[14px] text-[#424844] max-w-md mx-auto">
                 Your morning milk subscription has been registered with our Kreeri farm dispatch desk.

@@ -7,7 +7,7 @@ interface BrandLogoProps {
 export const BrandLogo = ({ className = '' }: BrandLogoProps) => (
   <img
     src={logoImage}
-    alt="Meadow Milk logo"
+    alt="Pakizah Milk logo"
     className={`object-cover object-center ${className}`}
   />
 );

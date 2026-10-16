@@ -29,10 +29,10 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSubscribe, onOpenDeliveryH
           <BrandLogo className="h-11 w-11 shrink-0 rounded-lg transition-transform duration-300 group-hover:scale-105" />
           <div className="flex flex-col">
             <span className="font-display-hero text-[22px] tracking-tight leading-none text-[#042217] font-bold">
-              MEADOW MILK
+              PAKIZAH MILK
             </span>
             <span className="text-[11px] font-bold text-[#3d674f] uppercase tracking-widest mt-0.5">
-              Kreeri, Baramulla
+              Pure origin
             </span>
           </div>
         </a>

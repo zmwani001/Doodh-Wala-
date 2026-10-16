@@ -21,7 +21,7 @@ export const ValleyHeritage: React.FC = () => {
           </p>
 
           <p className="text-[15px] sm:text-[16px] text-[#424844] leading-relaxed">
-            Meadow Milk was born out of a desire to revive that unadulterated agrarian heritage. We believe dairy shouldn’t be an industrial secret wrapped in synthetic packaging. By maintaining our cows in Kreeri on natural alpine slopes and delivering without middleman delays, we keep our valley’s families healthy and our rural farmland thriving.
+            Pakizah Milk was born out of a desire to revive that unadulterated agrarian heritage. We believe dairy shouldn’t be an industrial secret wrapped in synthetic packaging. By maintaining our cows in Kreeri on natural alpine slopes and delivering without middleman delays, we keep our valley’s families healthy and our rural farmland thriving.
           </p>
 
           <div className="pt-6 flex flex-wrap items-center gap-6 sm:gap-10 border-t border-[#042217]/10">

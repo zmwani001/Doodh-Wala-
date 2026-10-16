@@ -9,7 +9,7 @@ export const FloatingWhatsApp: React.FC = () => {
       {showMenu && (
         <div className="bg-[#fbf9f6] rounded-2xl p-4 shadow-2xl border border-[#042217]/10 w-72 mb-2 space-y-2 text-[#1b1c1a] animate-fadeIn">
           <div className="flex items-center justify-between pb-2 border-b border-[#042217]/10">
-            <div className="text-[13px] font-bold text-[#042217]">Meadow Milk Dispatch Desk</div>
+            <div className="text-[13px] font-bold text-[#042217]">Pakizah Milk Dispatch Desk</div>
             <button
               onClick={() => setShowMenu(false)}
               className="text-[#424844] hover:text-[#042217]"
@@ -38,7 +38,7 @@ export const FloatingWhatsApp: React.FC = () => {
               ⏸️ Pause Tomorrow&apos;s Milk
             </a>
             <a
-              href="https://wa.me/919906000000?text=Hello%2C%20does%20Meadow%20Milk%20deliver%20in%20my%20area%3F"
+              href="https://wa.me/919906000000?text=Hello%2C%20does%20Pakizah%20Milk%20deliver%20in%20my%20area%3F"
               target="_blank"
               rel="noopener noreferrer"
               className="block p-2 rounded-xl bg-[#f5f3f0] hover:bg-[#bcebcc]/50 text-[12px] font-semibold text-[#042217] transition-colors"

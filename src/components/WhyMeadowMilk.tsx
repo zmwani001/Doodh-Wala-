@@ -9,7 +9,7 @@ export const WhyMeadowMilk: React.FC = () => {
             Compare the Difference
           </span>
           <h2 className="font-display-hero text-3xl sm:text-4xl text-[#042217] tracking-tight font-semibold">
-            Why Families Choose Meadow Milk Over Packet Milk
+            Why Families Choose Pakizah Milk Over Packet Milk
           </h2>
           <p className="text-[15px] sm:text-[16px] text-[#424844]">
             See the direct contrast between standard mass-market packaged pouches and our farm-to-table morning harvest.
@@ -93,7 +93,7 @@ export const WhyMeadowMilk: React.FC = () => {
                     The Pure Way
                   </span>
                   <h3 className="font-display-hero text-[24px] text-white font-bold">
-                    Meadow Milk Kashmir
+                    Pakizah Milk Kashmir
                   </h3>
                   <p className="text-[13px] text-[#82a291] mt-0.5">Kreeri, Baramulla Farm Single-Source</p>
                 </div>

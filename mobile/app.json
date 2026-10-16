@@ -1,0 +1,23 @@
+{
+  "expo": {
+    "name": "Meadow Milk",
+    "slug": "meadow-milk-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.meadowmilk.app"
+    },
+    "android": {
+      "package": "com.meadowmilk.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#F4F2E9"
+      }
+    },
+    "plugins": [
+      "expo-status-bar"
+    ]
+  }
+}
