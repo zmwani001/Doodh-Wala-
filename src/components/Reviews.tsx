@@ -44,7 +44,7 @@ export const Reviews: React.FC = () => {
               Loved by Local Families
             </h2>
             <p className="text-[15px] sm:text-[16px] text-[#424844]">
-              Read genuine experiences from homes across Baramulla, Kanispora, and Sopore who drink Meadow Milk every dawn.
+              Read genuine experiences from homes across Baramulla, Kanispora, and Sopore who drink Pakizah Milk every dawn.
             </p>
           </div>
 
@@ -105,7 +105,7 @@ export const Reviews: React.FC = () => {
           <div className="bg-[#fbf9f6] rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-[#042217]/10">
             <div className="flex items-center justify-between mb-4">
               <h3 className="font-display-hero text-2xl font-bold text-[#042217]">
-                Share Your Meadow Milk Review
+                Share Your Pakizah Milk Review
               </h3>
               <button
                 onClick={() => setShowAddModal(false)}

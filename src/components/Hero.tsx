@@ -39,10 +39,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenSubscribe, onOpenFarmTour }) =
         {/* Main Headline */}
         <div className="max-w-4xl space-y-4 mb-6">
           <h1 className="font-display-hero text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-none">
-            MEADOW MILK
+            PAKIZAH MILK
           </h1>
           <p className="font-display-hero text-2xl sm:text-3xl text-[#ffdf99] font-normal italic leading-snug">
-            Purely from Kashmir. Freshly to your Home.
+            Pure origin
           </p>
         </div>
 

@@ -21,7 +21,7 @@ export const CtaBanner: React.FC<CtaBannerProps> = ({ onOpenSubscribe }) => {
         </span>
 
         <h2 className="font-display-hero text-4xl sm:text-5xl lg:text-6xl text-white font-bold tracking-tight">
-          Start Your Morning With Meadow Milk
+          Start Your Morning With Pakizah Milk
         </h2>
 
         <p className="text-[17px] sm:text-[18px] text-[#f2f0ed]/90 max-w-2xl mx-auto leading-relaxed">
@@ -39,7 +39,7 @@ export const CtaBanner: React.FC<CtaBannerProps> = ({ onOpenSubscribe }) => {
 
           <a
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white/20 hover:bg-white/30 text-white text-[15px] font-semibold px-7 py-4 rounded-full transition-all duration-200 border border-white/15"
-            href="https://wa.me/919906000000?text=Hi%2C%20I%20want%20to%20inquire%20about%20Meadow%20Milk%20daily%20delivery%20in%20Kashmir."
+            href="https://wa.me/919906000000?text=Hi%2C%20I%20want%20to%20inquire%20about%20Pakizah%20Milk%20daily%20delivery%20in%20Kashmir."
             rel="noopener noreferrer"
             target="_blank"
           >

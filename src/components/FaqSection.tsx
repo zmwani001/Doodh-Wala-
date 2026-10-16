@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const FAQS = [
   {
-    q: 'Is Meadow Milk 100% pure cow milk?',
+    q: 'Is Pakizah Milk 100% pure cow milk?',
     a: 'Yes, exclusively. We never mix buffalo milk or buy unverified milk from external collection middlemen. Every bottle comes directly from our own carefully reared, healthy dairy cows in Kreeri, Baramulla.',
   },
   {

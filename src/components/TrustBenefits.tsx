@@ -65,7 +65,7 @@ export const TrustBenefits: React.FC = () => {
           Purity in Every Pour
         </span>
         <h2 className="font-display-hero text-3xl sm:text-4xl text-[#042217] tracking-tight font-semibold">
-          Why Families in Kashmir Choose Meadow Milk
+          Why Families in Kashmir Choose Pakizah Milk
         </h2>
         <p className="text-[15px] sm:text-[16px] text-[#424844] leading-relaxed">
           Raised on virgin alpine clover and natural spring water in Kreeri, our dairy adheres to artisanal care free from industrial shortcuts.

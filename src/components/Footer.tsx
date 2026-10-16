@@ -13,7 +13,7 @@ export const Footer: React.FC = () => {
             </div>
 
             <p className="font-display-hero text-lg text-[#ffdf99] font-normal italic">
-              Purely from Kashmir. Freshly to your Home.
+              Pure origin
             </p>
 
             <p className="text-[13px] text-[#f2f0ed]/80 leading-relaxed">
@@ -25,7 +25,7 @@ export const Footer: React.FC = () => {
                 Farm Estate Address
               </p>
               <p className="text-[13px] text-[#f2f0ed]">
-                Meadow Milk Dairy Farm, Kreeri, Baramulla, Kashmir 193101
+                Pakizah Milk Dairy Farm, Kreeri, Baramulla, Kashmir 193101
               </p>
             </div>
           </div>
@@ -110,7 +110,7 @@ export const Footer: React.FC = () => {
               </p>
               <p className="flex items-center gap-2">
                 <span className="material-symbols-outlined text-[18px] text-[#ffdf99]">mail</span>
-                delivery@meadowmilk.in
+                delivery@pakizahmilk.in
               </p>
             </div>
 
@@ -126,7 +126,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-[13px] text-[#f2f0ed]/60">
-            © {new Date().getFullYear()} Meadow Milk Kashmir. All rights reserved.
+            © {new Date().getFullYear()} Pakizah Milk Kashmir. All rights reserved.
           </p>
 
           <div className="flex items-center gap-4 text-[13px] text-[#f2f0ed]/80">

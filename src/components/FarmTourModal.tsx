@@ -89,7 +89,7 @@ export const FarmTourModal: React.FC<FarmTourModalProps> = ({ isOpen, onClose })
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
           <a
-            href="https://wa.me/919906000000?text=Hello%20Meadow%20Milk%2C%20I%20would%20like%20to%20schedule%20a%20family%20visit%20to%20your%20Kreeri%20farm."
+            href="https://wa.me/919906000000?text=Hello%20Pakizah%20Milk%2C%20I%20would%20like%20to%20schedule%20a%20family%20visit%20to%20your%20Kreeri%20farm."
             target="_blank"
             rel="noopener noreferrer"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#042217] text-white hover:bg-[#1b382b] text-[13px] font-bold px-6 py-2.5 rounded-full shadow-md"
