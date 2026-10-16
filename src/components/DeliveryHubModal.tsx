@@ -151,7 +151,7 @@ export const DeliveryHubModal: React.FC<DeliveryHubModalProps> = ({ isOpen, onCl
         {/* WhatsApp Dispatch Support */}
         <div className="pt-2 border-t border-[#042217]/10 flex flex-col sm:flex-row items-center justify-between gap-3">
           <a
-            href="https://wa.me/919906000000?text=Hello%20Pakizah%20Milk%20Dispatch%2C%20I%20need%20assistance%20with%20my%20daily%20delivery%20schedule."
+            href="https://wa.me/919906000000?text=Hello%20Meadow%20Milk%20Dispatch%2C%20I%20need%20assistance%20with%20my%20daily%20delivery%20schedule."
             target="_blank"
             rel="noopener noreferrer"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-[#3d674f] hover:text-[#042217] text-[13px] font-bold"

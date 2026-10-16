@@ -24,112 +24,81 @@ export const SubscriptionCustomizer: React.FC<SubscriptionCustomizerProps> = ({
   const monthlyTotal = Math.round(litres * daysInMonth * ratePerLitre) + bottleMonthlyCharge;
   const dailyCost = Math.round(litres * ratePerLitre);
 
-  const whatsappMessage = `Hello Pakizah Milk Kashmir, I would like to start a morning milk subscription:%0A- Plan: ${
+  const whatsappMessage = `Hello Meadow Milk Kashmir, I would like to start a morning milk subscription:%0A- Plan: ${
     frequency === 'daily' ? 'Daily (7 days/wk)' : frequency === 'alternate' ? 'Alternate Days' : 'Monthly Prepaid Pass'
   }%0A- Quantity: ${litres}L per delivery%0A- Packaging: ${
     packaging === 'glass' ? 'Eco Glass Bottle' : 'Food-Grade Pouch'
   }%0A- Monthly glass bottle charge: ₹${bottleMonthlyCharge}%0A- Estimated monthly total: ₹${monthlyTotal}%0A- Location: Baramulla, Kashmir%0APlease guide me on starting tomorrow morning!`;
 
   return (
-    <section className="py-24 bg-[#fbf9f6] px-6 lg:px-12 max-w-7xl mx-auto w-full" id="subscription">
-      <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-        <span className="text-[12px] text-[#3d674f] uppercase tracking-widest font-bold">
-          Daily Milk Made Simple
-        </span>
-        <h2 className="font-display-hero text-3xl sm:text-4xl text-[#042217] tracking-tight font-semibold">
-          Fresh Milk, Every Morning. Automatically.
-        </h2>
-        <p className="text-[15px] sm:text-[16px] text-[#424844]">
-          Choose your daily quantity and let Pakizah Milk take care of the rest. Cancel, pause, or adjust anytime via WhatsApp.
-        </p>
-      </div>
+    <section className="scroll-mt-20 bg-[#f2f0e8] px-5 py-12 sm:px-8 sm:py-16 lg:px-12" id="subscription">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-8 max-w-2xl">
+          <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#64755e]">Meadow Milk</span>
+          <h2 className="mt-2 font-display-hero text-3xl font-semibold leading-tight text-[#233d2d] sm:text-4xl">
+            Choose your milk plan.
+          </h2>
+          <p className="mt-2 text-[14px] leading-relaxed text-[#5d6258]">
+            Cow milk from Kreeri, in the quantity and delivery rhythm that suits your home.
+          </p>
+        </div>
 
       {/* Subscription Plans & Interactive Customizer */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-12 lg:gap-8">
         {/* Plans Cards (7 Cols) */}
-        <div className="lg:col-span-7 space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {/* Daily Plan */}
-            <div
+        <div className="space-y-5 lg:col-span-7">
+          <div className="grid grid-cols-1 gap-2 sm:grid-cols-3" role="group" aria-label="Choose a delivery plan">
+            <button
+              type="button"
+              aria-pressed={frequency === 'daily'}
               onClick={() => setFrequency('daily')}
-              className={`cursor-pointer rounded-2xl p-6 transition-all border-2 ${
+              className={`rounded-md border p-4 text-left transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3d674f] ${
                 frequency === 'daily'
-                  ? 'bg-white border-[#042217] shadow-lg ring-1 ring-[#042217]/10'
-                  : 'bg-[#f5f3f0] border-transparent hover:bg-[#efeeeb]'
+                  ? 'border-[#38553d] bg-white'
+                  : 'border-[#d8dbcf] bg-[#faf9f5] hover:border-[#82927b]'
               }`}
             >
-              <span className="px-2.5 py-1 rounded-full bg-[#bcebcc] text-[#042217] text-[11px] font-bold uppercase tracking-wider">
-                Most Popular
-              </span>
-              <h4 className="font-display-hero text-[20px] font-bold text-[#042217] mt-4 mb-1">
-                Daily Milk
-              </h4>
-              <div className="text-[13px] text-[#424844] mb-4">
-                7 days a week, reliable morning delivery.
-              </div>
-              <div className="font-display-hero text-2xl text-[#042217] font-bold">
-                ₹65
-            <span className="text-[13px] font-normal text-[#424844]"> / L</span>
-              </div>
-            </div>
-
-            {/* Alternate Plan */}
-            <div
+              <span className="block text-[14px] font-semibold text-[#233d2d]">Daily</span>
+              <span className="mt-1 block text-[13px] text-[#5d6258]">₹65 / L</span>
+            </button>
+            <button
+              type="button"
+              aria-pressed={frequency === 'alternate'}
               onClick={() => setFrequency('alternate')}
-              className={`cursor-pointer rounded-2xl p-6 transition-all border-2 ${
+              className={`rounded-md border p-4 text-left transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3d674f] ${
                 frequency === 'alternate'
-                  ? 'bg-white border-[#042217] shadow-lg ring-1 ring-[#042217]/10'
-                  : 'bg-[#f5f3f0] border-transparent hover:bg-[#efeeeb]'
+                  ? 'border-[#38553d] bg-white'
+                  : 'border-[#d8dbcf] bg-[#faf9f5] hover:border-[#82927b]'
               }`}
             >
-              <span className="px-2.5 py-1 rounded-full bg-[#eae8e5] text-[#424844] text-[11px] font-bold uppercase tracking-wider">
-                Flexible
-              </span>
-              <h4 className="font-display-hero text-[20px] font-bold text-[#042217] mt-4 mb-1">
-                Alternate Days
-              </h4>
-              <div className="text-[13px] text-[#424844] mb-4">
-                Delivered on alternate mornings (15 days/mo).
-              </div>
-              <div className="font-display-hero text-2xl text-[#042217] font-bold">
-                ₹63<span className="text-[13px] font-normal text-[#424844]"> / L</span>
-              </div>
-            </div>
-
-            {/* Monthly Plan */}
-            <div
+              <span className="block text-[14px] font-semibold text-[#233d2d]">Alternate days</span>
+              <span className="mt-1 block text-[13px] text-[#5d6258]">₹63 / L</span>
+            </button>
+            <button
+              type="button"
+              aria-pressed={frequency === 'monthly'}
               onClick={() => setFrequency('monthly')}
-              className={`cursor-pointer rounded-2xl p-6 transition-all border-2 ${
+              className={`rounded-md border p-4 text-left transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3d674f] ${
                 frequency === 'monthly'
-                  ? 'bg-white border-[#042217] shadow-lg ring-1 ring-[#042217]/10'
-                  : 'bg-[#f5f3f0] border-transparent hover:bg-[#efeeeb]'
+                  ? 'border-[#38553d] bg-white'
+                  : 'border-[#d8dbcf] bg-[#faf9f5] hover:border-[#82927b]'
               }`}
             >
-              <span className="px-2.5 py-1 rounded-full bg-[#ffdf99] text-[#251a00] text-[11px] font-bold uppercase tracking-wider">
-                Best Value
-              </span>
-              <h4 className="font-display-hero text-[20px] font-bold text-[#042217] mt-4 mb-1">
-                Monthly Pass
-              </h4>
-              <div className="text-[13px] text-[#424844] mb-4">
-                Prepaid 30-day supply with bottle swap.
-              </div>
-              <div className="font-display-hero text-2xl text-[#042217] font-bold">
-                ₹60<span className="text-[13px] font-normal text-[#424844]"> / L</span>
-              </div>
-            </div>
+              <span className="block text-[14px] font-semibold text-[#233d2d]">Monthly pass</span>
+              <span className="mt-1 block text-[13px] text-[#5d6258]">₹60 / L</span>
+            </button>
           </div>
 
           {/* Interactive Stepper Form Box */}
-          <div className="bg-[#f5f3f0] rounded-3xl p-6 sm:p-8 space-y-8 border border-[#042217]/5 shadow-sm">
+          <div className="space-y-6 border-t border-[#c9d1c0] pt-5">
             {/* Step 1: Quantity */}
             <div>
               <div className="flex items-center justify-between mb-3">
                 <label className="text-[15px] text-[#042217] font-bold">
-                  Step 1: Select Daily Quantity
+                  Quantity per delivery
                 </label>
-                <span className="text-[13px] font-semibold text-[#3d674f]">
-                  Selected: {litres} Litre{litres > 1 ? 's' : ''} (₹{dailyCost} / morning)
+                <span className="text-[13px] font-medium text-[#53634f]">
+                  {litres} L · ₹{dailyCost} per delivery
                 </span>
               </div>
 
@@ -139,25 +108,26 @@ export const SubscriptionCustomizer: React.FC<SubscriptionCustomizerProps> = ({
                     key={val}
                     type="button"
                     onClick={() => setLitres(val)}
-                    className={`py-3 px-4 rounded-xl text-center text-[14px] font-bold transition-all duration-200 ${
+                    className={`min-h-11 rounded-md border px-3 py-2 text-center text-[14px] font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3d674f] ${
                       litres === val
-                        ? 'bg-[#042217] text-white shadow-md'
-                        : 'bg-white text-[#1b1c1a] hover:bg-[#eae8e5] border border-[#042217]/10'
+                        ? 'border-[#38553d] bg-[#38553d] text-white'
+                        : 'border-[#d8dbcf] bg-[#faf9f5] text-[#344136] hover:bg-white'
                     }`}
                   >
-                    {val === 0.5 ? '500 ml' : `${val} Litre${val > 1 ? 's' : ''}${val === 1 ? ' ★' : ''}`}
+                    {val === 0.5 ? '500 ml' : `${val} Litre${val > 1 ? 's' : ''}`}
                   </button>
                 ))}
               </div>
 
               {/* Incremental steppers for flexible quantity */}
-              <div className="mt-3 flex items-center gap-3 text-[13px] text-[#424844]">
-                <span>Need a custom amount?</span>
-                <div className="inline-flex items-center bg-white rounded-lg border border-[#042217]/10 px-2 py-1">
+              <div className="mt-3 flex flex-wrap items-center gap-3 text-[13px] text-[#5d6258]">
+                <span>Adjust quantity</span>
+                <div className="inline-flex items-center rounded-md border border-[#d8dbcf] bg-[#faf9f5] px-2 py-1">
                   <button
                     type="button"
                     onClick={() => setLitres((prev) => Math.max(0.5, Number((prev - 0.5).toFixed(1))))}
-                    className="w-6 h-6 rounded flex items-center justify-center text-[#042217] hover:bg-[#efeeeb] font-bold"
+                    aria-label="Decrease quantity by half a litre"
+                    className="flex h-8 w-8 items-center justify-center rounded text-[18px] font-semibold text-[#233d2d] hover:bg-[#edf0e7]"
                   >
                     -
                   </button>
@@ -165,7 +135,8 @@ export const SubscriptionCustomizer: React.FC<SubscriptionCustomizerProps> = ({
                   <button
                     type="button"
                     onClick={() => setLitres((prev) => Number((prev + 0.5).toFixed(1)))}
-                    className="w-6 h-6 rounded flex items-center justify-center text-[#042217] hover:bg-[#efeeeb] font-bold"
+                    aria-label="Increase quantity by half a litre"
+                    className="flex h-8 w-8 items-center justify-center rounded text-[18px] font-semibold text-[#233d2d] hover:bg-[#edf0e7]"
                   >
                     +
                   </button>
@@ -176,15 +147,15 @@ export const SubscriptionCustomizer: React.FC<SubscriptionCustomizerProps> = ({
             {/* Step 2: Packaging Selection */}
             <div>
               <label className="text-[15px] text-[#042217] block mb-3 font-bold">
-                Step 2: Choose Preferred Packaging
+                Packaging
               </label>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <label
                   onClick={() => setPackaging('glass')}
-                  className={`cursor-pointer p-4 rounded-2xl flex items-center gap-4 transition-all border-2 ${
+                  className={`cursor-pointer rounded-md border p-4 flex items-center gap-3 transition-colors ${
                     packaging === 'glass'
-                      ? 'bg-white border-[#042217] shadow-sm'
-                      : 'bg-white/80 border-transparent hover:bg-white'
+                      ? 'bg-white border-[#38553d]'
+                      : 'bg-[#faf9f5] border-[#d8dbcf] hover:bg-white'
                   }`}
                 >
                   <input
@@ -197,7 +168,6 @@ export const SubscriptionCustomizer: React.FC<SubscriptionCustomizerProps> = ({
                   <div>
                     <div className="text-[14px] text-[#042217] font-bold flex items-center gap-1.5">
                       <span>Eco Glass Bottle</span>
-                      <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#bcebcc] text-[#042217]">Recommended</span>
                     </div>
                     <div className="text-[12px] text-[#424844] mt-0.5">
                       Reusable sanitized returnable bottles
@@ -207,10 +177,10 @@ export const SubscriptionCustomizer: React.FC<SubscriptionCustomizerProps> = ({
 
                 <label
                   onClick={() => setPackaging('pouch')}
-                  className={`cursor-pointer p-4 rounded-2xl flex items-center gap-4 transition-all border-2 ${
+                    className={`cursor-pointer rounded-md border p-4 flex items-center gap-3 transition-colors ${
                     packaging === 'pouch'
-                      ? 'bg-white border-[#042217] shadow-sm'
-                      : 'bg-white/80 border-transparent hover:bg-white'
+                      ? 'bg-white border-[#38553d]'
+                      : 'bg-[#faf9f5] border-[#d8dbcf] hover:bg-white'
                   }`}
                 >
                   <input
@@ -233,41 +203,32 @@ export const SubscriptionCustomizer: React.FC<SubscriptionCustomizerProps> = ({
             </div>
 
             {/* Delivery Time Assurance */}
-            <div className="flex items-center gap-3 p-4 rounded-2xl bg-[#bcebcc]/40 text-[#042217] border border-[#3d674f]/20">
-              <span className="material-symbols-outlined text-[24px] text-[#3d674f]">schedule</span>
+            <div className="flex items-center gap-3 border-t border-[#c9d1c0] pt-4 text-[#53634f]">
+              <span className="material-symbols-outlined text-[20px]" aria-hidden="true">schedule</span>
               <div className="text-[13px] leading-relaxed">
-                <span className="font-bold">Delivery Service:</span> Morning Fresh Delivery As Per Availed Service.
+                <span className="font-semibold">Delivery:</span> Morning schedule follows the selected plan.
               </div>
             </div>
           </div>
         </div>
 
         {/* Live Order Summary Card (5 Cols) */}
-        <div className="lg:col-span-5 sticky top-28 bg-[#efeeeb] rounded-3xl p-6 sm:p-8 shadow-xl border border-[#042217]/10">
-          <div className="flex items-center justify-between mb-2">
-            <h3 className="font-display-hero text-2xl font-bold text-[#042217]">
-              Subscription Summary
-            </h3>
-            <span className="px-2.5 py-1 rounded-full bg-[#042217] text-[#ffdf99] text-[11px] font-bold uppercase">
-              Pure Cow Milk
-            </span>
-          </div>
+        <div className="bg-[#fbf9f5] p-5 border border-[#d8dbcf] sm:p-6 lg:sticky lg:top-24 lg:col-span-5">
+          <h3 className="mb-4 font-display-hero text-xl font-semibold text-[#233d2d]">
+            Your selection
+          </h3>
 
-          <p className="text-[13px] text-[#424844] mb-6">
-            Transparent pricing direct from Kreeri farm with zero hidden delivery charges.
-          </p>
-
-          <div className="space-y-3 mb-6 bg-white/70 rounded-2xl p-4 border border-[#042217]/5">
-            <div className="flex justify-between items-center py-1.5 border-b border-[#042217]/5">
-              <span className="text-[14px] text-[#424844]">Daily Quantity</span>
-              <span className="text-[14px] text-[#042217] font-bold">
+          <div className="mb-5 divide-y divide-[#d8dbcf]">
+            <div className="flex items-center justify-between gap-3 py-3">
+              <span className="text-[13px] text-[#5d6258]">Quantity</span>
+              <span className="text-right text-[13px] font-semibold text-[#233d2d]">
                 {litres} Litre{litres > 1 ? 's' : ''} / morning
               </span>
             </div>
 
-            <div className="flex justify-between items-center py-1.5 border-b border-[#042217]/5">
-              <span className="text-[14px] text-[#424844]">Delivery Plan</span>
-              <span className="text-[14px] text-[#042217] font-bold">
+            <div className="flex items-center justify-between gap-3 py-3">
+              <span className="text-[13px] text-[#5d6258]">Plan</span>
+              <span className="text-right text-[13px] font-semibold text-[#233d2d]">
                 {frequency === 'daily'
                   ? 'Daily (7 days/wk)'
                   : frequency === 'alternate'
@@ -276,39 +237,34 @@ export const SubscriptionCustomizer: React.FC<SubscriptionCustomizerProps> = ({
               </span>
             </div>
 
-            <div className="flex justify-between items-center py-1.5 border-b border-[#042217]/5">
-              <span className="text-[14px] text-[#424844]">Packaging Format</span>
-              <span className="text-[14px] text-[#042217] font-bold">
+            <div className="flex items-center justify-between gap-3 py-3">
+              <span className="text-[13px] text-[#5d6258]">Packaging</span>
+              <span className="text-right text-[13px] font-semibold text-[#233d2d]">
                 {packaging === 'glass' ? 'Eco Sanitized Glass' : 'Food-Grade Sealed Pouch'}
               </span>
             </div>
 
-            <div className="flex justify-between items-center py-1.5 border-b border-[#042217]/5">
-              <span className="text-[14px] text-[#424844]">Doorstep Delivery</span>
-              <span className="text-[14px] text-[#3d674f] font-bold">FREE (0)</span>
-            </div>
-
-            <div className="flex justify-between items-center py-1.5">
-              <span className="text-[14px] text-[#424844]">Glass Bottle Charge</span>
-              <span className="text-[14px] text-[#042217] font-bold">₹{bottleMonthlyCharge} / month</span>
+            <div className="flex items-center justify-between gap-3 py-3">
+              <span className="text-[13px] text-[#5d6258]">Glass bottle charge</span>
+              <span className="text-right text-[13px] font-semibold text-[#233d2d]">₹{bottleMonthlyCharge} / month</span>
             </div>
           </div>
 
-          <div className="pt-2 pb-6 flex justify-between items-baseline">
+          <div className="flex items-end justify-between gap-4 border-t border-[#d8dbcf] py-4">
             <div>
-              <span className="font-display-hero text-[18px] text-[#042217] font-bold block">
-                Estimated Monthly
+              <span className="block text-[13px] font-semibold text-[#233d2d]">
+                Monthly estimate
               </span>
-              <span className="text-[12px] text-[#424844]">
+              <span className="text-[11px] text-[#5d6258]">
                 {daysInMonth} deliveries @ ₹{ratePerLitre}/L
               </span>
             </div>
             <div className="text-right">
-              <span className="font-display-hero text-3xl sm:text-4xl text-[#042217] font-bold">
+              <span className="font-display-hero text-3xl font-semibold text-[#233d2d]">
                 ₹{monthlyTotal.toLocaleString('en-IN')}
               </span>
-              <div className="text-[12px] text-[#3d674f] font-bold">
-                ₹{dailyCost} / morning delivery
+              <div className="text-[11px] font-medium text-[#53634f]">
+                ₹{dailyCost} / delivery
               </div>
             </div>
           </div>
@@ -323,30 +279,24 @@ export const SubscriptionCustomizer: React.FC<SubscriptionCustomizerProps> = ({
                   totalAmount: monthlyTotal,
                 })
               }
-              className="w-full flex items-center justify-center gap-3 bg-[#042217] text-white hover:bg-[#1b382b] active:scale-[0.98] text-[15px] font-bold py-4 rounded-full shadow-lg transition-all duration-200"
+              className="flex min-h-12 w-full items-center justify-center gap-2 rounded-md bg-[#233d2d] py-3 text-[14px] font-semibold text-white transition-colors hover:bg-[#38553d] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3d674f]"
             >
-              <span className="material-symbols-outlined text-[20px] text-[#ffdf99]">local_shipping</span>
-              <span>Start My Subscription</span>
+              <span className="material-symbols-outlined text-[19px] text-[#f1dfb8]" aria-hidden="true">local_shipping</span>
+              <span>Order Fresh Milk</span>
             </button>
 
             <a
               href={`https://wa.me/919906000000?text=${whatsappMessage}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full flex items-center justify-center gap-2 bg-[#bcebcc] hover:bg-[#a3d1b3] text-[#042217] text-[14px] font-bold py-3.5 rounded-full transition-all duration-200"
+              className="inline-flex min-h-10 w-full items-center justify-center gap-2 text-[13px] font-medium text-[#38553d] underline decoration-[#aab59e] underline-offset-4 transition-colors hover:text-[#1d3324] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3d674f]"
             >
-              <span className="material-symbols-outlined text-[19px]">chat</span>
-              <span>Subscribe Instantly via WhatsApp</span>
+              <span className="material-symbols-outlined text-[18px]" aria-hidden="true">chat</span>
+              <span>Ask about ordering on WhatsApp</span>
             </a>
           </div>
-
-          <div className="mt-4 text-center">
-            <p className="text-[12px] text-[#424844] flex items-center justify-center gap-1.5">
-              <span className="material-symbols-outlined text-[16px] text-[#3d674f]">verified</span>
-              <span>Pause, modify or cancel anytime with 1-click via WhatsApp</span>
-            </p>
-          </div>
         </div>
+      </div>
       </div>
     </section>
   );

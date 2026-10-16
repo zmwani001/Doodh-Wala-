@@ -39,20 +39,20 @@ export const SubscriptionModal: React.FC<SubscriptionModalProps> = ({
 
   const bottleMonthlyCharge = initialConfig.packaging === 'glass' ? 100 : 0;
   const whatsappOrderUrl = `https://wa.me/919906000000?text=${encodeURIComponent(
-    `Hello Pakizah Milk Kashmir!%0A*New Subscription Order: ${subscriptionId}*%0A%0A• Name: ${name}%0A• Phone: ${phone}%0A• Area: ${area}%0A• Address: ${address}%0A• Plan: ${
+    `Hello Meadow Milk Kashmir!\n*New order request: ${subscriptionId}*\n\nName: ${name}\nPhone: ${phone}\nArea: ${area}\nAddress: ${address}\nPlan: ${
       initialConfig.frequency === 'daily'
         ? 'Daily Milk (7 days/wk)'
         : initialConfig.frequency === 'alternate'
         ? 'Alternate Days'
         : 'Monthly Prepaid Pass'
-    }%0A• Quantity: ${initialConfig.litres} Litre/morning%0A• Packaging: ${
+    }\nQuantity: ${initialConfig.litres} Litre/morning\nPackaging: ${
       initialConfig.packaging === 'glass' ? 'Eco Glass Bottle' : 'Food-Grade Pouch'
-    }%0A• Monthly glass bottle charge: ₹${bottleMonthlyCharge}%0A• Estimated monthly total: ₹${initialConfig.totalAmount}%0A• First Morning: ${startDate}%0A• Note: ${instructions}%0A%0APlease confirm my morning delivery schedule!`
+    }\nMonthly glass bottle charge: ₹${bottleMonthlyCharge}\nEstimated monthly total: ₹${initialConfig.totalAmount}\nFirst Morning: ${startDate}\nNote: ${instructions}\n\nPlease confirm availability and my delivery schedule.`
   )}`;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 backdrop-blur-sm p-4 overflow-y-auto">
-      <div className="bg-[#fbf9f6] rounded-3xl max-w-xl w-full p-6 sm:p-8 shadow-2xl border border-[#042217]/10 my-8">
+    <div className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-black/75 p-2 backdrop-blur-sm sm:items-center sm:p-4">
+      <div className="my-2 max-h-[calc(100dvh-1rem)] w-full max-w-xl overflow-y-auto rounded-md border border-[#042217]/10 bg-[#fbf9f6] p-5 shadow-2xl sm:my-8 sm:max-h-[calc(100dvh-4rem)] sm:p-8">
         {!isSuccess ? (
           <div>
             <div className="flex items-center justify-between pb-4 border-b border-[#042217]/10 mb-6">
@@ -196,7 +196,7 @@ export const SubscriptionModal: React.FC<SubscriptionModalProps> = ({
               <div className="p-3.5 rounded-xl bg-[#bcebcc]/40 text-[#042217] text-[12px] flex items-center gap-2">
                 <span className="material-symbols-outlined text-[20px] text-[#3d674f]">verified</span>
                 <span>
-                  <strong>Zero-Risk Guarantee:</strong> You only pay after your first morning milk delivery. Pause or cancel anytime via WhatsApp.
+                  Your request is sent to WhatsApp on the next screen so the team can confirm your delivery details.
                 </span>
               </div>
 
@@ -225,19 +225,19 @@ export const SubscriptionModal: React.FC<SubscriptionModalProps> = ({
 
             <div className="space-y-2">
               <span className="text-[12px] text-[#3d674f] font-bold uppercase tracking-wider">
-                Subscription Confirmed
+                  Request ready
               </span>
               <h3 className="font-display-hero text-3xl font-bold text-[#042217]">
-                Welcome to Pakizah Milk!
+                Order request prepared
               </h3>
               <p className="text-[14px] text-[#424844] max-w-md mx-auto">
-                Your morning milk subscription has been registered with our Kreeri farm dispatch desk.
+                Send your details to Meadow Milk on WhatsApp to confirm your order and delivery schedule.
               </p>
             </div>
 
             <div className="bg-[#f5f3f0] rounded-2xl p-5 text-left border border-[#042217]/10 space-y-2 max-w-md mx-auto text-[13px]">
               <div className="flex justify-between">
-                <span className="text-[#424844]">Subscription ID:</span>
+                <span className="text-[#424844]">Request reference:</span>
                 <span className="font-bold text-[#042217] font-mono">{subscriptionId}</span>
               </div>
               <div className="flex justify-between">
