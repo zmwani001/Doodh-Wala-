@@ -12,7 +12,7 @@ export const WhyMeadowMilk: React.FC = () => {
             Why Families Choose Pakizah Milk Over Packet Milk
           </h2>
           <p className="text-[15px] sm:text-[16px] text-[#424844]">
-            See the direct contrast between standard mass-market packaged pouches and our farm-to-table morning harvest.
+            See the direct contrast between standard mass-market packaged pouches and our single-source farm milk.
           </p>
         </div>
 
@@ -117,7 +117,7 @@ export const WhyMeadowMilk: React.FC = () => {
                     check
                   </span>
                   <span>
-                    <strong className="text-white">Freshness Within Hours:</strong> Freshly milked and delivered with Morning Fresh Delivery As Per Availed Service.
+                    <strong className="text-white">Single-Source Farm Origin:</strong> Freshly milked from our own herd in Kreeri with complete traceability and care.
                   </span>
                 </div>
 

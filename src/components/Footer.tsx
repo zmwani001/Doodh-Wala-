@@ -3,145 +3,28 @@ import { BrandLogo } from './BrandLogo';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="w-full bg-[#042217] text-white pt-16 pb-12 border-t border-white/10">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 mb-14">
-          {/* Brand Info */}
-          <div className="lg:col-span-4 space-y-4">
-            <div className="flex items-center gap-3">
-              <BrandLogo className="h-12 w-12 rounded-lg" />
-            </div>
-
-            <p className="font-display-hero text-lg text-[#ffdf99] font-normal italic">
-              Pure origin
-            </p>
-
-            <p className="text-[13px] text-[#f2f0ed]/80 leading-relaxed">
-              Sourced directly from the lush, alpine slopes of Kreeri pastures. Chilled, untouched by human hands, and delivered within hours of sunrise.
-            </p>
-
-            <div className="pt-2">
-              <p className="text-[11px] text-[#ecc15a] uppercase font-bold tracking-wider mb-1">
-                Farm Estate Address
-              </p>
-              <p className="text-[13px] text-[#f2f0ed]">
-                Pakizah Milk Dairy Farm, Kreeri, Baramulla, Kashmir 193101
-              </p>
+    <footer className="border-t border-white/10 bg-[#233d2d] py-8 text-white">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+        <div className="flex flex-col justify-between gap-7 sm:flex-row sm:items-center">
+          <div className="flex items-center gap-3">
+            <BrandLogo className="h-11 w-11 rounded-full bg-white object-cover object-[center_38%]" />
+            <div>
+              <p className="font-display-hero text-xl font-semibold">Meadow Milk</p>
+              <p className="mt-0.5 text-[13px] text-white/75">Purely from Kashmir. Freshly to your Home.</p>
             </div>
           </div>
 
-          {/* Navigation Links */}
-          <div className="lg:col-span-2 space-y-4">
-            <h4 className="text-[13px] text-[#ffdf99] font-bold uppercase tracking-wider">
-              Navigation
-            </h4>
-            <ul className="space-y-2.5 text-[14px] text-[#f2f0ed]/80">
-              <li>
-                <a className="hover:text-[#ffdf99] transition-colors" href="#hero">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a className="hover:text-[#ffdf99] transition-colors" href="#farm">
-                  Our Farm
-                </a>
-              </li>
-              <li>
-                <a className="hover:text-[#ffdf99] transition-colors" href="#quality">
-                  Quality &amp; Testing
-                </a>
-              </li>
-              <li>
-                <a className="hover:text-[#ffdf99] transition-colors" href="#subscription">
-                  Subscription Plans
-                </a>
-              </li>
-              <li>
-                <a className="hover:text-[#ffdf99] transition-colors" href="#delivery">
-                  Delivery Network
-                </a>
-              </li>
-              <li>
-                <a className="hover:text-[#ffdf99] transition-colors" href="#faq">
-                  Frequently Asked
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Dairy Standards */}
-          <div className="lg:col-span-3 space-y-4">
-            <h4 className="text-[13px] text-[#ffdf99] font-bold uppercase tracking-wider">
-              Dairy Standards
-            </h4>
-            <ul className="space-y-2.5 text-[13px] text-[#f2f0ed]/80">
-              <li className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-[17px] text-[#ffdf99]">verified</span>
-                100% Pure Cow Milk
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-[17px] text-[#ffdf99]">science</span>
-                Purity Ensured Through Advanced Testing
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-[17px] text-[#ffdf99]">ac_unit</span>
-                Cold Chain Insulated (3.6°C)
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-[17px] text-[#ffdf99]">eco</span>
-                Zero Preservatives or Chemicals
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact & Support */}
-          <div className="lg:col-span-3 space-y-4">
-            <h4 className="text-[13px] text-[#ffdf99] font-bold uppercase tracking-wider">
-              Contact &amp; Support
-            </h4>
-            <div className="space-y-2.5 text-[13px] text-[#f2f0ed]/80">
-              <p className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-[18px] text-[#ffdf99]">chat</span>
-                WhatsApp Daily Dispatch Support
-              </p>
-              <p className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-[18px] text-[#ffdf99]">call</span>
-                Morning Helpline: +91 1954 220 110
-              </p>
-              <p className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-[18px] text-[#ffdf99]">mail</span>
-                delivery@pakizahmilk.in
-              </p>
-            </div>
-
-            <div className="pt-3">
-              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1b382b] text-[#ffdf99] text-[11px] font-bold border border-white/10">
-                <span className="material-symbols-outlined text-[14px]">shield</span>
-                100% Pure &amp; Fresh Daily Farm Milk
-              </span>
-            </div>
-          </div>
+          <nav aria-label="Footer navigation" className="flex flex-wrap gap-x-5 gap-y-2 text-[13px] text-white/85">
+            <a className="transition-colors hover:text-[#f1dfb8]" href="#subscription">Our milk</a>
+            <a className="transition-colors hover:text-[#f1dfb8]" href="#why">Why Meadow Milk</a>
+            <a className="transition-colors hover:text-[#f1dfb8]" href="#delivery">Delivery</a>
+            <a className="transition-colors hover:text-[#f1dfb8]" href="https://wa.me/919906000000" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          </nav>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-[13px] text-[#f2f0ed]/60">
-            © {new Date().getFullYear()} Pakizah Milk Kashmir. All rights reserved.
-          </p>
-
-          <div className="flex items-center gap-4 text-[13px] text-[#f2f0ed]/80">
-            <a className="hover:text-[#ffdf99] transition-colors" href="#hero">
-              Privacy Policy
-            </a>
-            <span className="text-white/20">•</span>
-            <a className="hover:text-[#ffdf99] transition-colors" href="#hero">
-              Terms of Supply
-            </a>
-            <span className="text-white/20">•</span>
-            <a className="hover:text-[#ffdf99] transition-colors" href="#hero">
-              Refund &amp; Bottle Guidelines
-            </a>
-          </div>
+        <div className="mt-7 flex flex-col gap-2 border-t border-white/15 pt-4 text-[12px] text-white/70 sm:flex-row sm:items-center sm:justify-between">
+          <p>Kreeri, Baramulla, Kashmir</p>
+          <p>© {new Date().getFullYear()} Meadow Milk</p>
         </div>
       </div>
     </footer>

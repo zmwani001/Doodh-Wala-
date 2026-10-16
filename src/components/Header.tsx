@@ -12,33 +12,28 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSubscribe, onOpenDeliveryH
 
   const navLinks = [
     { name: 'Home', href: '#hero', id: 'home' },
-    { name: 'Our Farm', href: '#farm', id: 'farm' },
-    { name: 'Our Milk', href: '#benefits', id: 'benefits' },
-    { name: 'Journey', href: '#journey', id: 'journey' },
+    { name: 'Our Milk', href: '#subscription', id: 'subscription' },
+    { name: 'Why Meadow Milk', href: '#why', id: 'why' },
     { name: 'Quality', href: '#quality', id: 'quality' },
-    { name: 'Subscription', href: '#subscription', id: 'subscription' },
     { name: 'Delivery', href: '#delivery', id: 'delivery' },
-    // { name: 'FAQs', href: '#faq', id: 'faq' },
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#fbf9f6]/90 backdrop-blur-md shadow-[0_1px_8px_rgba(20,36,28,0.04)] border-b border-[#042217]/10">
-      <div className="h-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between gap-4">
-        {/* Brand Area */}
-        <a href="#hero" className="flex items-center gap-3 shrink-0 group focus:outline-none">
-          <BrandLogo className="h-11 w-11 shrink-0 rounded-lg transition-transform duration-300 group-hover:scale-105" />
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-[#243a2b]/10 bg-[#fbf9f6]">
+      <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-12">
+        <a href="#hero" className="group flex shrink-0 items-center gap-2.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#3d674f]">
+          <BrandLogo className="h-10 w-10 shrink-0 rounded-full bg-[#e9eddf] object-cover object-[center_38%] transition-transform duration-200 group-hover:scale-[1.03]" />
           <div className="flex flex-col">
-            <span className="font-display-hero text-[22px] tracking-tight leading-none text-[#042217] font-bold">
-              PAKIZAH MILK
+            <span className="font-display-hero text-[21px] font-semibold leading-none text-[#233d2d]">
+              Meadow Milk
             </span>
-            <span className="text-[11px] font-bold text-[#3d674f] uppercase tracking-widest mt-0.5">
-              Pure origin
+            <span className="mt-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#64755e]">
+              Kashmir
             </span>
           </div>
         </a>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden xl:flex items-center gap-5 text-[14px] font-semibold text-[#424844]">
+        <nav aria-label="Main navigation" className="hidden items-center gap-1 text-[14px] font-medium text-[#424844] lg:flex">
           {navLinks.map((link) => {
             const isActive = activeSection === link.id;
             return (
@@ -46,10 +41,10 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSubscribe, onOpenDeliveryH
                 key={link.id}
                 href={link.href}
                 onClick={() => setActiveSection(link.id)}
-                className={`transition-all duration-200 px-3 py-1.5 rounded-full ${
+                className={`rounded px-3 py-2 transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3d674f] ${
                   isActive
-                    ? 'bg-[#1b382b] text-white shadow-sm'
-                    : 'text-[#424844] hover:text-[#042217] hover:bg-[#efeeeb]'
+                    ? 'text-[#233d2d]'
+                    : 'text-[#50584d] hover:bg-[#edf0e7] hover:text-[#233d2d]'
                 }`}
               >
                 {link.name}
@@ -58,53 +53,44 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSubscribe, onOpenDeliveryH
           })}
         </nav>
 
-        {/* Actions Zone */}
-        <div className="flex items-center gap-3 shrink-0">
-          {/* <a
-            className="hidden xl:flex items-center gap-1.5 text-[#3d674f] hover:text-[#042217] transition-colors text-[13px] font-semibold px-2 py-1 rounded-lg hover:bg-[#efeeeb]"
-            href="https://wa.me/919906000000?text=Hello%20Meadow%20Milk%2C%20I%20have%20an%20inquiry%20regarding%20morning%20milk%20delivery."
-            rel="noopener"
-            target="_blank"
-          >
-            <span className="material-symbols-outlined text-[19px]">chat</span>
-            <span className="hidden lg:inline">Morning Support</span>
-          </a> */}
-
+        <div className="flex shrink-0 items-center gap-2">
           <button
-            onClick={onOpenSubscribe}
-            className="bg-[#042217] text-white hover:bg-[#1b382b] active:scale-[0.98] text-[14px] font-semibold px-4 sm:px-5 py-2.5 rounded-full transition-all duration-200 shadow-[0_2px_8px_-2px_rgba(20,36,28,0.15)] flex items-center gap-1.5"
+            onClick={() => {
+              setMobileMenuOpen(false);
+              onOpenSubscribe();
+            }}
+            className="flex min-h-10 items-center gap-1.5 rounded-md bg-[#233d2d] px-3 text-[13px] font-semibold text-white transition-colors hover:bg-[#38553d] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3d674f] sm:px-4 sm:text-[14px]"
           >
-            <span className="material-symbols-outlined text-[18px] text-[#ffdf99]">local_shipping</span>
-            <span>Subscribe for Daily Milk</span>
+            <span className="material-symbols-outlined text-[18px] text-[#f1dfb8]" aria-hidden="true">local_shipping</span>
+            <span className="hidden sm:inline">Order Fresh Milk</span>
+            <span className="sm:hidden">Order</span>
           </button>
 
-          {/* Account / Delivery Manager Button */}
           <button
             onClick={onOpenDeliveryHub}
-            aria-label="Manage Deliveries"
-            title="My Deliveries & Schedule"
-            className="w-9 h-9 rounded-full bg-[#1b382b] hover:bg-[#042217] text-white flex items-center justify-center shrink-0 transition-transform active:scale-95 shadow-sm"
+            aria-label="Manage deliveries"
+            title="Manage deliveries"
+            className="hidden h-10 w-10 shrink-0 items-center justify-center rounded-md border border-[#233d2d]/20 text-[#233d2d] transition-colors hover:bg-[#edf0e7] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3d674f] sm:flex"
           >
-            <span className="material-symbols-outlined text-[20px]">person</span>
+            <span className="material-symbols-outlined text-[20px]" aria-hidden="true">calendar_month</span>
           </button>
 
-          {/* Mobile Menu Toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="xl:hidden w-9 h-9 rounded-lg bg-[#efeeeb] text-[#042217] flex items-center justify-center transition-colors"
-            aria-label="Toggle Navigation Menu"
+            className="flex h-10 w-10 items-center justify-center rounded-md border border-[#233d2d]/20 text-[#233d2d] transition-colors hover:bg-[#edf0e7] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3d674f] lg:hidden"
+            aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={mobileMenuOpen}
           >
-            <span className="material-symbols-outlined text-[22px]">
+            <span className="material-symbols-outlined text-[22px]" aria-hidden="true">
               {mobileMenuOpen ? 'close' : 'menu'}
             </span>
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="xl:hidden bg-[#fbf9f6] border-b border-[#042217]/10 px-6 py-4 shadow-xl">
-          <div className="grid grid-cols-2 gap-2 mb-4">
+        <div className="border-t border-[#233d2d]/10 bg-[#fbf9f6] px-4 py-3 lg:hidden">
+          <nav aria-label="Mobile navigation" className="mx-auto grid max-w-7xl gap-1 sm:grid-cols-2">
             {navLinks.map((link) => (
               <a
                 key={link.id}
@@ -113,33 +99,22 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSubscribe, onOpenDeliveryH
                   setActiveSection(link.id);
                   setMobileMenuOpen(false);
                 }}
-                className="px-3 py-2 rounded-lg text-[14px] font-semibold text-[#1b1c1a] hover:bg-[#efeeeb] transition-colors"
+                className="rounded px-3 py-2.5 text-[14px] font-medium text-[#374438] transition-colors hover:bg-[#edf0e7] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#3d674f]"
               >
                 {link.name}
               </a>
             ))}
-          </div>
-          <div className="pt-3 border-t border-[#042217]/10 flex flex-col gap-2">
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenDeliveryHub();
-              }}
-              className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-[#efeeeb] text-[#042217] text-[14px] font-semibold"
-            >
-              <span className="material-symbols-outlined text-[18px]">calendar_month</span>
-              Manage My Morning Deliveries
-            </button>
-            <a
-              href="https://wa.me/919906000000"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-[#bcebcc] text-[#042217] text-[14px] font-semibold"
-            >
-              <span className="material-symbols-outlined text-[18px]">chat</span>
-              WhatsApp Helpline (+91 99060 00000)
-            </a>
-          </div>
+          </nav>
+          <button
+            onClick={() => {
+              setMobileMenuOpen(false);
+              onOpenDeliveryHub();
+            }}
+            className="mx-auto mt-2 flex min-h-11 w-full max-w-7xl items-center gap-2 rounded border-t border-[#233d2d]/10 px-3 text-left text-[14px] font-medium text-[#38553d] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#3d674f]"
+          >
+            <span className="material-symbols-outlined text-[18px]" aria-hidden="true">calendar_month</span>
+            Manage deliveries
+          </button>
         </div>
       )}
     </header>
