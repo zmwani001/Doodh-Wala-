@@ -1,30 +1,34 @@
 import { CoverageZone, LabBatchReport, ReviewItem } from '../types';
 
-export const TODAY_BATCH_REPORT: LabBatchReport = {
-  batchId: 'KM-2026-0925-A',
-  date: 'September 25, 2026',
-  milkingTime: 'Morning Milking (Automated Stainless Line)',
-  testingTime: '05:05 AM IST (Kreeri On-Site QC Laboratory)',
-  fatContent: '4.15% (Natural Whole Milk Fat)',
-  snfContent: '8.82% (Solids-Not-Fat)',
-  temperatureAtDispatch: '3.6°C (Strict Cold Chain Maintain)',
-  waterAdulteration: '0.00% (Cryoscopic Freezing Point -0.540°C)',
-  starchUreaDetergent: 'Absence Confirmed Through Advanced Testing',
-  microbialQuality: '<10,000 CFU/mL (Grade A Premium Alpine Standard)',
-  chemistName: 'Dr. Uzma Ashraf (Chief Dairy Technologist)',
-  signatureVerified: true,
-  parameters: [
-    { name: 'Milk Fat (Gerber Method)', expected: '3.80% – 4.50%', result: '4.15%', status: 'passed' },
-    { name: 'Solids-Not-Fat (SNF Lactometer)', expected: '8.50% min', result: '8.82%', status: 'passed' },
-    { name: 'Added External Water', expected: '0.00%', result: '0.00%', status: 'passed' },
-    { name: 'Urea / Nitrogenous Adulterants', expected: 'Negative', result: 'Negative (Passed)', status: 'passed' },
-    { name: 'Starch & Cereal Flours', expected: 'Negative', result: 'Negative (Passed)', status: 'passed' },
-    { name: 'Synthetic Detergents & Neutralizers', expected: 'Negative', result: 'Negative (Passed)', status: 'passed' },
-    { name: 'Maltodextrin & Sugar Fillers', expected: 'Negative', result: 'Negative (Passed)', status: 'passed' },
-    { name: 'Antibiotic Residue Screen', expected: 'Negative', result: 'Negative (Passed)', status: 'passed' },
-    { name: 'Milk Acidity (% Lactic Acid)', expected: '0.12% – 0.14%', result: '0.132%', status: 'passed' },
-    { name: 'Temperature at Glass Bottling', expected: '< 4.0°C', result: '3.6°C', status: 'passed' },
-  ],
+export const getTodayDemoReport = (now = new Date()): LabBatchReport => {
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, '0');
+  const day = String(now.getDate()).padStart(2, '0');
+  const dateSeed = Number(`${year}${month}${day}`);
+  const fat = (3.9 + (dateSeed % 31) / 100).toFixed(2);
+  const snf = (8.55 + (Math.floor(dateSeed / 31) % 31) / 100).toFixed(2);
+  const temperature = (3.2 + (dateSeed % 8) / 10).toFixed(1);
+  const date = new Intl.DateTimeFormat('en-US', { dateStyle: 'long' }).format(now);
+
+  return {
+    batchId: `KM-${year}${month}${day}-DEMO`,
+    date,
+    milkingTime: 'Illustrative morning collection',
+    testingTime: 'Demonstration data · not tested',
+    fatContent: `${fat}%`,
+    snfContent: `${snf}%`,
+    temperatureAtDispatch: `${temperature}°C`,
+    waterAdulteration: 'Sample value only',
+    starchUreaDetergent: 'Not tested · sample report',
+    microbialQuality: 'Not tested · sample report',
+    chemistName: 'No reviewer · sample data only',
+    signatureVerified: false,
+    parameters: [
+      { name: 'Milk Fat (illustrative)', expected: 'For demonstration only', result: `${fat}%`, status: 'passed' },
+      { name: 'Solids-Not-Fat (illustrative)', expected: 'For demonstration only', result: `${snf}%`, status: 'passed' },
+      { name: 'Dispatch Temperature (illustrative)', expected: 'For demonstration only', result: `${temperature}°C`, status: 'passed' },
+    ],
+  };
 };
 
 export const COVERAGE_ZONES: CoverageZone[] = [
